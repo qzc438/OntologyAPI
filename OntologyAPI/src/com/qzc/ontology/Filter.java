@@ -97,14 +97,14 @@ public class Filter {
 	}
 	
 	@POST
-	@Path("/getDataSensorType")
+	@Path("/getDataSourceType")
 	@Produces("application/json")
 	public String getDataSensorType() {
 		// sparql
 		String sparql = "SELECT ?dataSourceType WHERE {?dataSourceType rdfs:subClassOf onto:DataSourceType.}";
 		// test
 		String jsonString =  findJsonResult(sparql);
-		System.out.println("getDataSensorType:" + jsonString);
+		System.out.println("getDataSourceType:" + jsonString);
 		return jsonString;
 	}
 	
@@ -156,70 +156,6 @@ public class Filter {
 		return jsonString;
 	}
 	
-	@POST
-	@Path("/getOverviewInformation")
-	@Produces("application/json")
-	public String getOverviewInformation(String jsonParameterBean) {
-		// string to object
-		Gson gson = new Gson();
-		ParameterBean parameterBean = gson.fromJson(jsonParameterBean, ParameterBean.class);
-		// sparql
-		String sparql = "SELECT ?applicationName ?data ?dataName ?model ?modelName \r\n" + 
-				"?performanceAccuracy ?performancePrecision ?performanceRecall ?performanceF1Score\r\n" + 
-				"WHERE {\r\n" + 
-				"	?application rdf:type onto:DeepLearningApplication.\r\n" + 
-				" 	?application onto:applicationName ?applicationName.\r\n" + 
-				"	?application onto:hasData ?data.\r\n" + 
-				"	?data onto:dataName ?dataName.\r\n" + 
-				"	?application onto:hasModel ?model.\r\n" + 
-				"	?model onto:modelName ?modelName.\r\n" + 
-				"	?model onto:hasPerformance ?modelPerformance.\r\n" + 
-				"	?modelPerformance onto:performanceAccuracy ?performanceAccuracy.\r\n" + 
-				"	?modelPerformance onto:performancePrecision ?performancePrecision.\r\n" + 
-				"	?modelPerformance onto:performanceRecall ?performanceRecall.\r\n" + 
-				"	?modelPerformance onto:performanceF1Score ?performanceF1Score.";
-		// has parameterBean
-		if (parameterBean!=null) {
-			sparql+= "  FILTER EXISTS {\r\n";
-			// has application domain
-			List<String> applicationDomains = parameterBean.getApplicationDomain();
-			if(applicationDomains!=null) {
-				for (int i = 0; i<applicationDomains.size(); i++) {
-					if(i==0)
-					{
-						sparql+= "    {?application onto:has"+ applicationDomains.get(i)+" ?applicationDomain.}\r\n";
-					}else {
-						sparql+= "    UNION \r\n";
-						sparql+= "    {?application onto:has"+ applicationDomains.get(i)+" ?applicationDomain.}\r\n";
-					}
-				}
-			}
-			// has application area
-			List<String> applicationAreas = parameterBean.getApplicationArea();
-			if(applicationAreas!=null) {
-				for (int i = 0; i<applicationAreas.size(); i++) {
-					if(i==0)
-					{
-						sparql+= "    {?applicationDomain onto:has"+ applicationAreas.get(i)+" ?applicationArea.}\r\n";
-					}else {
-						sparql+= "    UNION \r\n";
-						sparql+= "    {?applicationDomain onto:has"+ applicationAreas.get(i)+" ?applicationArea.}\r\n";
-					}
-				}
-			}
-			sparql+= "  }\r\n";
-		}
-		sparql+= "}";
-		
-		// test
-		String jsonString =  findJsonResult(sparql);
-		System.out.println("getOverview:" + jsonString);
-		return jsonString;
-	}
-
-	public static void main(String args[]) {
-		new Filter().getOverviewInformation("{\"applicationArea\":[\"SkinCancer\"],\"applicationDomain\":[\"Healthcare\"]}");
-	}
 }
 
 
