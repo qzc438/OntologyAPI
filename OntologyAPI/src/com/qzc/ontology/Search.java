@@ -79,28 +79,30 @@ public class Search {
 		Gson gson = new Gson();
 		ParameterBean parameterBean = gson.fromJson(jsonParameterBean, ParameterBean.class);
 		// sparql
-		String sparql = "SELECT ?applicationName ?data ?dataName ?model ?modelName (COUNT(?modelLayer) as ?numberOfLayers) \r\n" + 
+		String sparql = "SELECT ?applicationName ?data ?dataName ?dataResource ?model ?modelName ?modelResource (COUNT(?modelLayer) as ?numberOfLayers)\r\n" + 
 				"?performanceAccuracy ?performancePrecision ?performanceRecall ?performanceF1Score\r\n" + 
 				"WHERE {\r\n" + 
 				"	?application rdf:type onto:DeepLearningApplication.\r\n" + 
 				" 	?application onto:applicationName ?applicationName.\r\n" + 
 				"	?application onto:hasData ?data.\r\n" + 
 				"	?data onto:dataName ?dataName.\r\n" + 
+				"  	?data onto:dataResource ?dataResource.\r\n" + 
 				"	?application onto:hasModel ?model.\r\n" + 
 				"	?model onto:modelName ?modelName.\r\n" + 
+				"  	?model onto:modelResource ?modelResource.\r\n" + 
 				"	?model onto:hasPerformance ?modelPerformance.\r\n" + 
 				"	?modelPerformance onto:performanceAccuracy ?performanceAccuracy.\r\n" + 
 				"	?modelPerformance onto:performancePrecision ?performancePrecision.\r\n" + 
 				"	?modelPerformance onto:performanceRecall ?performanceRecall.\r\n" + 
-				"	?modelPerformance onto:performanceF1Score ?performanceF1Score.\r\n"+ 
-				"	?model onto:hasLayer ?modelLayer.\r\n";
+				"	?modelPerformance onto:performanceF1Score ?performanceF1Score.\r\n" + 
+				"  	?model onto:hasLayer ?modelLayer.";
 		// has parameterBean
 		if (parameterBean!=null) {
 			
 			// has application domain and area
-			sparql+= "  FILTER EXISTS {\r\n";
 			List<String> applicationDomains = parameterBean.getApplicationDomain();
 			if(applicationDomains!=null) {
+				sparql+= "  FILTER EXISTS {\r\n";
 				for (int i = 0; i<applicationDomains.size(); i++) {
 					if(i==0)
 					{
@@ -123,13 +125,13 @@ public class Search {
 						}
 					}
 				}
+				sparql+= "  }\r\n";
 			}
-			sparql+= "  }\r\n";
 			
 			// has data source type
-			sparql+= "  FILTER EXISTS {\r\n";
 			List<String> dataSourceTypes = parameterBean.getDataSourceType();
 			if(dataSourceTypes!=null) {
+				sparql+= "  FILTER EXISTS {\r\n";
 				sparql+= "		{?data onto:hasDataSourceType ?DataSourceType.}\r\n";
 				for (int i = 0; i<dataSourceTypes.size(); i++) {
 					if(i==0)
@@ -140,13 +142,13 @@ public class Search {
 						sparql+= "    {?DataSourceType onto:has"+ dataSourceTypes.get(i)+" ?sensorType.}\r\n";
 					}
 				}
+				sparql+= "  }\r\n";
 			}
-			sparql+= "  }\r\n";
 			
 			// has model type
-			sparql+= "  FILTER EXISTS {\r\n";
 			List<String> modelTypes = parameterBean.getModelType();
 			if(modelTypes!=null) {
+				sparql+= "  FILTER EXISTS {\r\n";
 				sparql+= "		{?model onto:hasModelType ?modelType.}\r\n";
 				for (int i = 0; i<modelTypes.size(); i++) {
 					if(i==0)
@@ -157,12 +159,31 @@ public class Search {
 						sparql+= "    {?modelType onto:has"+ modelTypes.get(i)+" ?HARModelType.}\r\n";
 					}
 				}
+				sparql+= "  }\r\n";
 			}
-			sparql+= "  }\r\n";
+			
+			//has performance metrics
+			String accuracy= parameterBean.getAccuracy();
+			if(accuracy!=null) {
+				sparql+= "  FILTER (?performanceAccuracy >"+ accuracy +")\r\n";
+			}
+			String precision= parameterBean.getPrecision();
+			if(precision!=null) {
+				sparql+= "  FILTER (?performancePrecision >"+ precision +")\r\n";
+			}
+			String recall= parameterBean.getRecall();
+			if(recall!=null) {
+				sparql+= "  FILTER (?performanceRecall >"+ recall +")\r\n";
+			}
+			String f1score= parameterBean.getF1score();
+			if(f1score!=null) {
+				sparql+= "  FILTER (?performanceF1Score >"+ f1score +")\r\n";
+			}
 			
 		}
 		sparql+= "}";
-		sparql+="Group by ?applicationName ?data ?dataName ?model ?modelName\r\n" + 
+		sparql+="GROUP BY \r\n" + 
+				"?applicationName ?data ?dataName ?dataResource ?model ?modelName ?modelResource\r\n" + 
 				"?performanceAccuracy ?performancePrecision ?performanceRecall ?performanceF1Score";
 		
 		// test
@@ -172,7 +193,7 @@ public class Search {
 	}
 
 	public static void main(String args[]) {
-		new Search().getOverviewInformation("{\"applicationDomain\":[\"Healthcare\"], \"applicationArea\":[\"MusculoskeletalDisorder\"], \"dataSourceType\":[\"Accelerometer\"], \"modelType\":[\"RNN\"]}");
+		new Search().getOverviewInformation("{\"applicationDomain\":[\"Healthcare\"], \"applicationArea\":[\"MusculoskeletalDisorder\"], \"dataSourceType\":[\"Accelerometer\"], \"modelType\":[\"RNN\"], \"accuracy\":0.9}");
 	}
 }
 

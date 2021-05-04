@@ -121,9 +121,66 @@ public class Detail {
 		return jsonString;
 	}
 	
+	@POST
+	@Path("/getLayerDetail/modelID={modelID}")
+	@Produces("application/json")
+	public String getLayerDetail(@PathParam("modelID") String modelID) {
+		// sparql
+		String sparql = String.format("SELECT \r\n" + 
+				"?reshapingLayer ?reshapingType\r\n" + 
+				"?poolingLayer ?poolingRank \r\n" + 
+				"?dropoutLayer ?dropoutRate\r\n" + 
+				"?convolutionLayer ?convolutionKernelSize \r\n" + 
+				"?denseLayer ?denseOutFeatures\r\n" + 
+				"?recurrentLayer ?recurrentUnits\r\n" + 
+				"WHERE {\r\n" + 
+				"  	{\r\n" + 
+				"    	onto:model-51ec407a158d400cb49a8a6b70688f4f onto:hasLayer ?modelLayer.\r\n" + 
+				"		?modelLayer onto:hasFunctionalLayer ?functionalLayer.\r\n" + 
+				"    	{\r\n" + 
+				"      		?functionalLayer onto:hasReshapingLayer ?reshapingLayer.\r\n" + 
+				"      		OPTIONAL{?reshapingLayer onto:reshapingType ?reshapingType.}\r\n" + 
+				"    	}\r\n" + 
+				"    	UNION\r\n" + 
+				"    	{\r\n" + 
+				"      		?functionalLayer onto:hasPoolingLayer ?poolingLayer.\r\n" + 
+				"      		OPTIONAL{?poolingLayer onto:poolingRank ?poolingRank.}\r\n" + 
+				"    	}\r\n" + 
+				"    	UNION\r\n" + 
+				"    	{\r\n" + 
+				"      		?functionalLayer onto:hasDropoutLayer ?dropoutLayer.\r\n" + 
+				"      		OPTIONAL{?dropoutLayer onto:dropoutRate ?dropoutRate.}\r\n" + 
+				"    	}\r\n" + 
+				"  	}\r\n" + 
+				"  	UNION\r\n" + 
+				"  	{\r\n" + 
+				"		onto:model-51ec407a158d400cb49a8a6b70688f4f onto:hasLayer ?modelLayer.\r\n" + 
+				"		?modelLayer onto:hasCoreLayer ?coreLayer.\r\n" + 
+				"    	{\r\n" + 
+				"      		?coreLayer onto:hasConvolutionLayer ?convolutionLayer.\r\n" + 
+				"      		OPTIONAL{?convolutionLayer onto:convolutionKernelSize ?convolutionKernelSize.}\r\n" + 
+				"    	}\r\n" + 
+				"        UNION\r\n" + 
+				"		{\r\n" + 
+				"      		?coreLayer onto:hasDenseLayer ?denseLayer.\r\n" + 
+				"      		OPTIONAL{?denseLayer onto:denseOutFeatures ?denseOutFeatures.}\r\n" + 
+				"    	}\r\n" + 
+				"    	UNION\r\n" + 
+				"		{\r\n" + 
+				"      		?coreLayer onto:hasRecurrentLayer ?recurrentLayer.\r\n" + 
+				"      		OPTIONAL{?recurrentLayer onto:recurrentUnits ?recurrentUnits.}\r\n" + 
+				"    	}\r\n" + 
+				"    }\r\n" + 
+				"}", modelID, modelID);
+		// test
+		String jsonString =  findJsonResult(sparql);
+		System.out.println("getLayerDetail:" + jsonString);
+		return jsonString;
+	}
+	
 	
 	public static void main(String args[]) {
-		new Detail().getModelDetail("model-8583827882eb42dba666e5ed6bbcde92");
+		new Detail().getLayerDetail("model-51ec407a158d400cb49a8a6b70688f4f");
 	}
 	
 
