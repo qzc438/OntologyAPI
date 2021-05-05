@@ -1,14 +1,14 @@
 # OntologyAPI
 ## Jersey+Jena+Tomcat, all the APIs is unber the link: localhost:8080/api
 ## Filter
-### /getApplicationDomain
-### /getApplicationArea/applicationDomain={applicationDomain}
-### /getDataSourceType
-### /getModelType
-### /getLayerType
+### Get application domain: /getApplicationDomain
+### Get application area: /getApplicationArea/applicationDomain={applicationDomain}
+### Get data source type: /getDataSourceType
+### Get model type: /getModelType
+### Get layer type: /getLayerType
 ## Search
-### /getOverviewInformation
+### Get overview information: /getOverviewInformation
 ## Detail
-### /getDataDetail/dataID={dataID}
-### /getModelDetail/modelID={modelID}
-### /getLayerDetail/modelID={modelID}
+### Get data detail: /getDataDetail/dataID={dataID}
+### Get model detail: /getModelDetail/modelID={modelID}
+### Get layer detail: /getLayerDetail/modelID={modelID}
