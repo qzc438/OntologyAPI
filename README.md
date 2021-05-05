@@ -1,6 +1,5 @@
 # OntologyAPI
-Jersey+Jena+Tomcat
-All the APIs is unber the link: localhost:8080/api
+Jersey+Jena+Tomcat, all the APIs is unber the link: localhost:8080/api
 ## Filter
 ### /getApplicationDomain
 ### /getApplicationArea/applicationDomain={applicationDomain}
