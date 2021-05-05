@@ -135,7 +135,7 @@ public class Detail {
 				"?recurrentLayer ?recurrentUnits\r\n" + 
 				"WHERE {\r\n" + 
 				"  	{\r\n" + 
-				"    	onto:model-51ec407a158d400cb49a8a6b70688f4f onto:hasLayer ?modelLayer.\r\n" + 
+				"    	onto:%s onto:hasLayer ?modelLayer.\r\n" + 
 				"		?modelLayer onto:hasFunctionalLayer ?functionalLayer.\r\n" + 
 				"    	{\r\n" + 
 				"      		?functionalLayer onto:hasReshapingLayer ?reshapingLayer.\r\n" + 
@@ -154,7 +154,7 @@ public class Detail {
 				"  	}\r\n" + 
 				"  	UNION\r\n" + 
 				"  	{\r\n" + 
-				"		onto:model-51ec407a158d400cb49a8a6b70688f4f onto:hasLayer ?modelLayer.\r\n" + 
+				"		onto:%s onto:hasLayer ?modelLayer.\r\n" + 
 				"		?modelLayer onto:hasCoreLayer ?coreLayer.\r\n" + 
 				"    	{\r\n" + 
 				"      		?coreLayer onto:hasConvolutionLayer ?convolutionLayer.\r\n" + 
