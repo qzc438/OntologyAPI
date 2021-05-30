@@ -50,16 +50,26 @@ public class Naming {
 	public static String DATA_PROPERTY_DOMAIN_HEALTHCARE_NAME = "healthcareName";
 	public static String OBJECT_PROPERTY_HAS_HEALTHCARE_APPLICATION = "hasHealthcare";
 	public static String OBJECT_PROPERTY_IS_HEALTHCARE_APPLICATION_OF = "isHealthcareOf";
-	// skin cancer
-	public static String CLASS_SKIN_CANCER = "SkinCancer";
-	public static String DATA_PROPERTY_SKIN_CANCER_NAME = "skinCancerName";
-	public static String OBJECT_PROPERTY_HAS_SKIN_CANCER = "hasSkinCancer";
-	public static String OBJECT_PROPERTY_IS_SKIN_CANCER_OF = "isSkinCancerOf";
-	// musculoskeletal disorder
-	public static String CLASS_MUSCULOSKELETAL_DISORDER = "MusculoskeletalDisorder";
-	public static String DATA_PROPERTY_MUSCULOSKELETAL_DISORDER_NAME = "musculoskeletalDisorderName";
-	public static String OBJECT_PROPERTY_HAS_MUSCULOSKELETAL_DISORDER = "hasMusculoskeletalDisorder";
-	public static String OBJECT_PROPERTY_IS_MUSCULOSKELETAL_DISORDER_OF = "isMusculoskeletalDisorderOf";
+	// HAR
+	public static String CLASS_HAR = "HAR";
+	public static String DATA_PROPERTY_HAR_NAME = "HARName";
+	public static String OBJECT_PROPERTY_HAS_HAR = "hasHAR";
+	public static String OBJECT_PROPERTY_IS_HAR_OF = "isHAROf";
+	// image detection
+	public static String CLASS_IMAGE_DETECTION = "ImageDetection";
+	public static String DATA_PROPERTY_IMAGE_DETECTION_NAME = "ImageDetectionName";
+	public static String OBJECT_PROPERTY_HAS_IMAGE_DETECTION = "hasImageDetection";
+	public static String OBJECT_PROPERTY_IS_IMAGE_DETECTION_OF = "isImageDetectionOf";
+//	// skin cancer
+//	public static String CLASS_SKIN_CANCER = "SkinCancer";
+//	public static String DATA_PROPERTY_SKIN_CANCER_NAME = "skinCancerName";
+//	public static String OBJECT_PROPERTY_HAS_SKIN_CANCER = "hasSkinCancer";
+//	public static String OBJECT_PROPERTY_IS_SKIN_CANCER_OF = "isSkinCancerOf";
+//	// musculoskeletal disorder
+//	public static String CLASS_MUSCULOSKELETAL_DISORDER = "MusculoskeletalDisorder";
+//	public static String DATA_PROPERTY_MUSCULOSKELETAL_DISORDER_NAME = "musculoskeletalDisorderName";
+//	public static String OBJECT_PROPERTY_HAS_MUSCULOSKELETAL_DISORDER = "hasMusculoskeletalDisorder";
+//	public static String OBJECT_PROPERTY_IS_MUSCULOSKELETAL_DISORDER_OF = "isMusculoskeletalDisorderOf";
 	// application has data and model
 	public static String OBJECT_PROPERTY_HAS_DATA = "hasData";
 	public static String OBJECT_PROPERTY_IS_DATA_OF = "isDataOf";
@@ -86,11 +96,11 @@ public class Naming {
 	public static String DATA_PROPERTY_GYROSCOPE_NAME = "gyroscopeName";
 	public static String OBJECT_PROPERTY_HAS_GYROSCOPE = "hasGyroscope";
 	public static String OBJECT_PROPERTY_IS_GYROSCOPE_OF = "isGyroscopeOf";
-	// has medical imaging device data
-	public static String CLASS_DATA_SOURCE_TYPE_MEDICALIMAGINGDEVICE = "MedicalImagingDevice";
-	public static String DATA_PROPERTY_MEDICALIMAGINGDEVICE_NAME = "medicalImagingDeviceName";
-	public static String OBJECT_PROPERTY_HAS_MEDICALIMAGINGDEVICE = "hasMedicalImagingDevice";
-	public static String OBJECT_PROPERTY_IS_MEDICALIMAGINGDEVICE_OF = "isMedicalImagingDeviceOf";
+	// has camera data
+	public static String CLASS_DATA_SOURCE_TYPE_CAMERA = "Camera";
+	public static String DATA_PROPERTY_CAMERA_NAME = "cameraName";
+	public static String OBJECT_PROPERTY_HAS_CAMERA = "hasCamera";
+	public static String OBJECT_PROPERTY_IS_CAMERA_OF = "isCameraOf";
 
 	// model
 	public static String CLASS_MODEL = "DeepLearningModel";
@@ -99,6 +109,41 @@ public class Naming {
 	public static String DATA_PROPERTY_MODEL_RESOURCE = "modelResource";
 	
 	// subclass of model
+	
+	// backend
+	public static String CLASS_MODEL_BACKEND = "Backend";
+	public static String DATA_PROPERTY_MODEL_BACKEND_NAME = "backendName";
+	// has backend
+	public static String OBJECT_PROPERTY_HAS_BACKEND = "hasBackend";
+	public static String OBJECT_PROPERTY_IS_BACKEND_OF = "isBackendOf";
+
+	// loss function
+	public static String CLASS_MODEL_LOSS_FUNCTION = "LossFunction";
+	public static String DATA_PROPERTY_MODEL_LOSS_FUNCTION_NAME = "lossFunctionName";
+	// has loss function
+	public static String OBJECT_PROPERTY_HAS_LOSS_FUNCTION = "hasLossFunction";
+	public static String OBJECT_PROPERTY_IS_LOSS_FUNCTION_OF = "isLossFunctionOf"; 
+	
+	// optimiser
+	public static String CLASS_MODEL_OPTIMISER = "Optimiser";
+	public static String DATA_PROPERTY_MODEL_OPTIMISER_NAME = "optimiserName";
+	// has optimiser
+	public static String OBJECT_PROPERTY_HAS_OPTIMISER = "hasOptimiser";
+	public static String OBJECT_PROPERTY_IS_OPTIMISER_OF = "isOptimiserOf"; 
+	
+	// input
+	public static String CLASS_MODEL_INPUT = "Input";
+	public static String DATA_PROPERTY_MODEL_INPUT_SHAPE = "inputShape";
+	// has input
+	public static String OBJECT_PROPERTY_HAS_INPUT = "hasInput";
+	public static String OBJECT_PROPERTY_IS_INPUT_OF = "isInputOf";
+	
+	// output
+	public static String CLASS_MODEL_OUTPUT = "Output";
+	public static String DATA_PROPERTY_MODEL_OUTPUT_SHAPE = "outputShape";
+	// has output
+	public static String OBJECT_PROPERTY_HAS_OUTPUT = "hasOutput";
+	public static String OBJECT_PROPERTY_IS_OUTPUT_OF = "isOutputOf";
 	
 	// performance
 	public static String CLASS_PERFORMANCE = "Performance";

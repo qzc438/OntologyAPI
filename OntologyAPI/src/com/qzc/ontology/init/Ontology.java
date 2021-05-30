@@ -84,34 +84,70 @@ public class Ontology {
 		isHealthcareApplicationOfProperty.setRange(applicationClass);
 		hasHealthcareApplicationProperty.setInverseProperty(isHealthcareApplicationOfProperty);
 		
-		// skin cancer
-		OWLNamedClass skinCancerClass = owlModel.createOWLNamedSubclass(Naming.CLASS_SKIN_CANCER,applicationHealthcareClass);
-		// skin cancer application name
-		OWLDatatypeProperty skinCancerNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_SKIN_CANCER_NAME);
-		skinCancerNameProperty.setRange(owlModel.getXSDstring());
-		skinCancerNameProperty.setDomain(skinCancerClass);
-		// has skin cancer
-		OWLObjectProperty hasSkinCancerProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_SKIN_CANCER);
-		hasSkinCancerProperty.setDomain(applicationHealthcareClass);
-		hasSkinCancerProperty.setRange(skinCancerClass);
-		OWLObjectProperty isSkinCancerOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_SKIN_CANCER_OF);
-		isSkinCancerOfProperty.setDomain(skinCancerClass);
-		isSkinCancerOfProperty.setRange(applicationHealthcareClass);
-		hasSkinCancerProperty.setInverseProperty(isSkinCancerOfProperty);
+//		RDFIndividual applicationMusculoskeletalDisorderIndividual2 = musculoskeletalDisorderClass.createOWLIndividual("applicationMusculoskeletalDisorder"+"-"+ UUIDUtil.creatUUID());
+//		applicationMusculoskeletalDisorderIndividual2.addPropertyValue(musculoskeletalDisorderNameProperty, "Musculoskeletal Disorder");
+//		applicationHealthcareIndividual2.addPropertyValue(hasMusculoskeletalDisorderProperty, applicationMusculoskeletalDisorderIndividual2);
+//		applicationMusculoskeletalDisorderIndividual2.addPropertyValue(isMusculoskeletalDisorderOfProperty, applicationHealthcareIndividual2);
 		
-		// musculoskeletal disorder
-		OWLNamedClass musculoskeletalDisorderClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MUSCULOSKELETAL_DISORDER,applicationHealthcareClass);
-		// musculoskeletal disorder application name
-		OWLDatatypeProperty musculoskeletalDisorderNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MUSCULOSKELETAL_DISORDER_NAME);
-		musculoskeletalDisorderNameProperty.setRange(owlModel.getXSDstring());
-		musculoskeletalDisorderNameProperty.setDomain(musculoskeletalDisorderClass);
-		// has musculoskeletal disorder
-		OWLObjectProperty hasMusculoskeletalDisorderProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_MUSCULOSKELETAL_DISORDER);
-		hasMusculoskeletalDisorderProperty.setDomain(applicationHealthcareClass);
-		hasMusculoskeletalDisorderProperty.setRange(musculoskeletalDisorderClass);
-		OWLObjectProperty isMusculoskeletalDisorderOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MUSCULOSKELETAL_DISORDER_OF);
-		isMusculoskeletalDisorderOfProperty.setDomain(musculoskeletalDisorderClass);
-		isMusculoskeletalDisorderOfProperty.setRange(applicationHealthcareClass);
+		// HAR
+		OWLNamedClass HARClass = owlModel.createOWLNamedSubclass(Naming.CLASS_HAR,applicationHealthcareClass);
+		// HAR application name
+		OWLDatatypeProperty HARNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_HAR_NAME);
+		HARNameProperty.setRange(owlModel.getXSDstring());
+		HARNameProperty.setDomain(HARClass);
+		// has HAR
+		OWLObjectProperty hasHARProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_HAR);
+		hasHARProperty.setDomain(applicationHealthcareClass);
+		hasHARProperty.setRange(HARClass);
+		OWLObjectProperty isHAROfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_HAR_OF);
+		isHAROfProperty.setDomain(HARClass);
+		isHAROfProperty.setRange(applicationHealthcareClass);
+		hasHARProperty.setInverseProperty(isHAROfProperty);
+		
+		// image detection
+		OWLNamedClass imageDetectionClass = owlModel.createOWLNamedSubclass(Naming.CLASS_IMAGE_DETECTION,applicationHealthcareClass);
+		// image detection application name
+		OWLDatatypeProperty imageDetectionNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_IMAGE_DETECTION_NAME);
+		imageDetectionNameProperty.setRange(owlModel.getXSDstring());
+		imageDetectionNameProperty.setDomain(imageDetectionClass);
+		// has image detection
+		OWLObjectProperty hasImageDetectionProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_IMAGE_DETECTION);
+		hasImageDetectionProperty.setDomain(applicationHealthcareClass);
+		hasImageDetectionProperty.setRange(imageDetectionClass);
+		OWLObjectProperty isImageDetectionOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_IMAGE_DETECTION_OF);
+		isImageDetectionOfProperty.setDomain(imageDetectionClass);
+		isImageDetectionOfProperty.setRange(applicationHealthcareClass);
+		hasImageDetectionProperty.setInverseProperty(isImageDetectionOfProperty);
+		
+		
+//		// skin cancer
+//		OWLNamedClass skinCancerClass = owlModel.createOWLNamedSubclass(Naming.CLASS_SKIN_CANCER,applicationHealthcareClass);
+//		// skin cancer application name
+//		OWLDatatypeProperty skinCancerNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_SKIN_CANCER_NAME);
+//		skinCancerNameProperty.setRange(owlModel.getXSDstring());
+//		skinCancerNameProperty.setDomain(skinCancerClass);
+//		// has skin cancer
+//		OWLObjectProperty hasSkinCancerProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_SKIN_CANCER);
+//		hasSkinCancerProperty.setDomain(applicationHealthcareClass);
+//		hasSkinCancerProperty.setRange(skinCancerClass);
+//		OWLObjectProperty isSkinCancerOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_SKIN_CANCER_OF);
+//		isSkinCancerOfProperty.setDomain(skinCancerClass);
+//		isSkinCancerOfProperty.setRange(applicationHealthcareClass);
+//		hasSkinCancerProperty.setInverseProperty(isSkinCancerOfProperty);
+//		
+//		// musculoskeletal disorder
+//		OWLNamedClass musculoskeletalDisorderClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MUSCULOSKELETAL_DISORDER,applicationHealthcareClass);
+//		// musculoskeletal disorder application name
+//		OWLDatatypeProperty musculoskeletalDisorderNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MUSCULOSKELETAL_DISORDER_NAME);
+//		musculoskeletalDisorderNameProperty.setRange(owlModel.getXSDstring());
+//		musculoskeletalDisorderNameProperty.setDomain(musculoskeletalDisorderClass);
+//		// has musculoskeletal disorder
+//		OWLObjectProperty hasMusculoskeletalDisorderProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_MUSCULOSKELETAL_DISORDER);
+//		hasMusculoskeletalDisorderProperty.setDomain(applicationHealthcareClass);
+//		hasMusculoskeletalDisorderProperty.setRange(musculoskeletalDisorderClass);
+//		OWLObjectProperty isMusculoskeletalDisorderOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MUSCULOSKELETAL_DISORDER_OF);
+//		isMusculoskeletalDisorderOfProperty.setDomain(musculoskeletalDisorderClass);
+//		isMusculoskeletalDisorderOfProperty.setRange(applicationHealthcareClass);
 		
 		// data
 		OWLNamedClass dataClass = owlModel.createOWLNamedClass(Naming.CLASS_DATA);
@@ -164,19 +200,18 @@ public class Ontology {
 		isGyroscopeOfProperty.setDomain(dataSourceTypeGyroscopeClass);
 		isGyroscopeOfProperty.setRange(dataSourceTypeClass);
 		hasGyroscopeProperty.setInverseProperty(isGyroscopeOfProperty);
-		// has medical imaging device data
-		OWLNamedClass dataSourceTypeMedicalImagingDeviceClass = owlModel.createOWLNamedSubclass(Naming.CLASS_DATA_SOURCE_TYPE_MEDICALIMAGINGDEVICE,dataSourceTypeClass);
-		OWLDatatypeProperty medicalImagingDeviceNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MEDICALIMAGINGDEVICE_NAME);
-		medicalImagingDeviceNameProperty.setRange(owlModel.getXSDstring());
-		medicalImagingDeviceNameProperty.setDomain(dataSourceTypeMedicalImagingDeviceClass);
-		OWLObjectProperty hasMedicalImagingProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_MEDICALIMAGINGDEVICE);
-		hasMedicalImagingProperty.setDomain(dataSourceTypeClass);
-		hasMedicalImagingProperty.setRange(dataSourceTypeMedicalImagingDeviceClass);
-		OWLObjectProperty isMedicalImagingDeviceOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MEDICALIMAGINGDEVICE_OF);
-		isMedicalImagingDeviceOfProperty.setDomain(dataSourceTypeMedicalImagingDeviceClass);
-		isMedicalImagingDeviceOfProperty.setRange(dataSourceTypeClass);
-		hasMedicalImagingProperty.setInverseProperty(isMedicalImagingDeviceOfProperty);
-		
+		// has camera data
+		OWLNamedClass dataSourceTypeCameraClass = owlModel.createOWLNamedSubclass(Naming.CLASS_DATA_SOURCE_TYPE_CAMERA,dataSourceTypeClass);
+		OWLDatatypeProperty cameraNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_CAMERA_NAME);
+		cameraNameProperty.setRange(owlModel.getXSDstring());
+		cameraNameProperty.setDomain(dataSourceTypeCameraClass);
+		OWLObjectProperty hasCameraProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_CAMERA);
+		hasCameraProperty.setDomain(dataSourceTypeClass);
+		hasCameraProperty.setRange(dataSourceTypeCameraClass);
+		OWLObjectProperty isCameraOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_CAMERA_OF);
+		isCameraOfProperty.setDomain(dataSourceTypeCameraClass);
+		isCameraOfProperty.setRange(dataSourceTypeClass);
+		hasCameraProperty.setInverseProperty(isCameraOfProperty);
 		
 		// model
 		OWLNamedClass modelClass = owlModel.createOWLNamedClass(Naming.CLASS_MODEL);
@@ -218,6 +253,81 @@ public class Ontology {
 
 		// subclass of model
 		
+		// model backend
+		OWLNamedClass modelBackendClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_BACKEND, modelClass);
+		// model backend name
+		OWLDatatypeProperty modelBackendNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_BACKEND_NAME);
+		modelBackendNameProperty.setRange(owlModel.getXSDstring());
+		modelBackendNameProperty.setDomain(modelBackendClass);
+		// model has backend
+		OWLObjectProperty hasBackendProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_BACKEND);
+		hasBackendProperty.setDomain(modelClass);
+		hasBackendProperty.setRange(modelBackendClass);
+		OWLObjectProperty isBackendOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_BACKEND_OF);
+		isBackendOfProperty.setDomain(modelBackendClass);
+		isBackendOfProperty.setRange(modelClass);
+		hasBackendProperty.setInverseProperty(isBackendOfProperty);
+		
+		// model loss function
+		OWLNamedClass modelLossFunctionClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_LOSS_FUNCTION, modelClass);
+		// model loss function name
+		OWLDatatypeProperty modelLossFunctionNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_LOSS_FUNCTION_NAME);
+		modelLossFunctionNameProperty.setRange(owlModel.getXSDstring());
+		modelLossFunctionNameProperty.setDomain(modelLossFunctionClass);
+		// model has loss function
+		OWLObjectProperty hasLossFunctionProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_LOSS_FUNCTION);
+		hasLossFunctionProperty.setDomain(modelClass);
+		hasLossFunctionProperty.setRange(modelLossFunctionClass);
+		OWLObjectProperty isLossFunctionOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_LOSS_FUNCTION_OF);
+		isLossFunctionOfProperty.setDomain(modelLossFunctionClass);
+		isLossFunctionOfProperty.setRange(modelClass);
+		hasLossFunctionProperty.setInverseProperty(isLossFunctionOfProperty);
+		
+		// model optimiser
+		OWLNamedClass modelOptimiserClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_OPTIMISER, modelClass);
+		// model optimiser name
+		OWLDatatypeProperty modelOptimiserNameProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_OPTIMISER_NAME);
+		modelOptimiserNameProperty.setRange(owlModel.getXSDstring());
+		modelOptimiserNameProperty.setDomain(modelOptimiserClass);
+		// model has optimiser
+		OWLObjectProperty hasOptimiserProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_OPTIMISER);
+		hasOptimiserProperty.setDomain(modelClass);
+		hasOptimiserProperty.setRange(modelOptimiserClass);
+		OWLObjectProperty isOptimiserOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_OPTIMISER_OF);
+		isOptimiserOfProperty.setDomain(modelOptimiserClass);
+		isOptimiserOfProperty.setRange(modelClass);
+		hasOptimiserProperty.setInverseProperty(isOptimiserOfProperty);
+		
+		// model input
+		OWLNamedClass modelInputClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_INPUT, modelClass);
+		// model input name
+		OWLDatatypeProperty modelInputShapeProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_INPUT_SHAPE);
+		modelInputShapeProperty.setRange(owlModel.getXSDstring());
+		modelInputShapeProperty.setDomain(modelInputClass);
+		// model has input
+		OWLObjectProperty hasInputProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_INPUT);
+		hasInputProperty.setDomain(modelClass);
+		hasInputProperty.setRange(modelInputClass);
+		OWLObjectProperty isInputOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_INPUT_OF);
+		isInputOfProperty.setDomain(modelInputClass);
+		isInputOfProperty.setRange(modelClass);
+		hasInputProperty.setInverseProperty(isInputOfProperty);
+		
+		// model output
+		OWLNamedClass modelOutputClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_OUTPUT, modelClass);
+		// model output name
+		OWLDatatypeProperty modelOutputShapeProperty = owlModel.createOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_OUTPUT_SHAPE);
+		modelOutputShapeProperty.setRange(owlModel.getXSDstring());
+		modelOutputShapeProperty.setDomain(modelOutputClass);
+		// mode has output
+		OWLObjectProperty hasOutputProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_OUTPUT);
+		hasOutputProperty.setDomain(modelClass);
+		hasOutputProperty.setRange(modelOutputClass);
+		OWLObjectProperty isOutputOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_OUTPUT_OF);
+		isOutputOfProperty.setDomain(modelOutputClass);
+		isOutputOfProperty.setRange(modelClass);
+		hasOutputProperty.setInverseProperty(isOutputOfProperty);
+		
 		// performance
 		OWLNamedClass performanceClass = owlModel.createOWLNamedSubclass(Naming.CLASS_PERFORMANCE, modelClass);
 		// performance accuracy
@@ -235,12 +345,12 @@ public class Ontology {
 		performanceF1ScoreProperty.setDomain(performanceClass);
 		// model has performance
 		OWLObjectProperty hasPerformanceProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_PERFORMANCE);
-		hasPerformanceProperty.setDomain(performanceClass);
-		hasPerformanceProperty.setRange(modelClass);
+		hasPerformanceProperty.setDomain(modelClass);
+		hasPerformanceProperty.setRange(performanceClass);
 		OWLObjectProperty isPerformanceOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_PERFORMANCE_OF);
 		isPerformanceOfProperty.setDomain(performanceClass);
 		isPerformanceOfProperty.setRange(modelClass);
-		isPerformanceOfProperty.setInverseProperty(isPerformanceOfProperty);
+		hasPerformanceProperty.setInverseProperty(isPerformanceOfProperty);
 		
 		// model has model type
 		OWLNamedClass modelTypeClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_TYPE, modelClass);

@@ -34,19 +34,26 @@ public class OntologyIndividual {
 	OWLObjectProperty hasHealthcareApplicationProperty;
 	OWLObjectProperty isHealthcareApplicationOfProperty;
 	
-	// skin cancer
-	OWLNamedClass skinCancerClass;
-	OWLDatatypeProperty skinCancerNameProperty;
-	// has skin cancer
-	OWLObjectProperty hasSkinCancerProperty;
-	OWLObjectProperty isSkinCancerOfProperty;
+	// HAR
+	OWLNamedClass HARClass;
+	OWLDatatypeProperty HARNameProperty;
+	// has HAR
+	OWLObjectProperty hasHARProperty;
+	OWLObjectProperty isHAROfProperty;
 	
-	// musculoskeletal disorder
-	OWLNamedClass musculoskeletalDisorderClass;
-	OWLDatatypeProperty musculoskeletalDisorderNameProperty;
-	// has musculoskeletal disorder
-	OWLObjectProperty hasMusculoskeletalDisorderProperty;
-	OWLObjectProperty isMusculoskeletalDisorderOfProperty;
+//	// skin cancer
+//	OWLNamedClass skinCancerClass;
+//	OWLDatatypeProperty skinCancerNameProperty;
+//	// has skin cancer
+//	OWLObjectProperty hasSkinCancerProperty;
+//	OWLObjectProperty isSkinCancerOfProperty;
+//	
+//	// musculoskeletal disorder
+//	OWLNamedClass musculoskeletalDisorderClass;
+//	OWLDatatypeProperty musculoskeletalDisorderNameProperty;
+//	// has musculoskeletal disorder
+//	OWLObjectProperty hasMusculoskeletalDisorderProperty;
+//	OWLObjectProperty isMusculoskeletalDisorderOfProperty;
 
 	// data
 	OWLNamedClass dataClass;
@@ -76,14 +83,14 @@ public class OntologyIndividual {
 	// has gyroscope data
 	OWLObjectProperty hasGyroscopeProperty;
 	OWLObjectProperty isGyroscopeOfProperty;
-	// medical imaging device data
-	OWLNamedClass dataSourceTypeMedicalImagingDeviceClass;
-	// medical imaging device data name
-	OWLDatatypeProperty medicalImagingDeviceNameProperty;
-	// has medical imaging device data 
-	OWLObjectProperty hasMedicalImagingDeviceProperty;
-	// is medical imaging device data
-	OWLObjectProperty isMedicalImagingDeviceOfProperty;
+//	// medical imaging device data
+//	OWLNamedClass dataSourceTypeMedicalImagingDeviceClass;
+//	// medical imaging device data name
+//	OWLDatatypeProperty medicalImagingDeviceNameProperty;
+//	// has medical imaging device data 
+//	OWLObjectProperty hasMedicalImagingDeviceProperty;
+//	// is medical imaging device data
+//	OWLObjectProperty isMedicalImagingDeviceOfProperty;
 	
 	
 	// model
@@ -103,6 +110,46 @@ public class OntologyIndividual {
 	OWLObjectProperty isModelOfProperty;
 	
 	// subclass of model
+	
+	// model backend
+	OWLNamedClass modelBackendClass;
+	// model backend name
+	OWLDatatypeProperty modelBackendNameProperty;
+	// model has backend
+	OWLObjectProperty hasBackendProperty;
+	OWLObjectProperty isBackendOfProperty;
+	
+	// model loss function
+	OWLNamedClass modelLossFunctionClass;
+	// model loss function name
+	OWLDatatypeProperty modelLossFunctionNameProperty;
+	// model has loss function
+	OWLObjectProperty hasLossFunctionProperty;
+	OWLObjectProperty isLossFunctionOfProperty;
+
+	// model optimiser
+	OWLNamedClass modelOptimiserClass;
+	// model optimiser name
+	OWLDatatypeProperty modelOptimiserNameProperty;
+	// model has optimiser
+	OWLObjectProperty hasOptimiserProperty;
+	OWLObjectProperty isOptimiserOfProperty;
+
+	// model input
+	OWLNamedClass modelInputClass;
+	// model input name
+	OWLDatatypeProperty modelInputShapeProperty;
+	// model has input
+	OWLObjectProperty hasInputProperty;
+	OWLObjectProperty isInputOfProperty;
+
+	// model output
+	OWLNamedClass modelOutputClass;
+	// model output name
+	OWLDatatypeProperty modelOutputShapeProperty;
+	// model has output
+	OWLObjectProperty hasOutputProperty;
+	OWLObjectProperty isOutputOfProperty;
 	
 	// performance
 	OWLNamedClass performanceClass;
@@ -353,19 +400,27 @@ public class OntologyIndividual {
 		applicationHealthcareClass = owlModel.getOWLNamedClass(Naming.CLASS_APPLICATION_DOMAIN_HEALTHCARE);
 		applicationHealthcareNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_DOMAIN_HEALTHCARE_NAME);
 		
-		// skin cancer
-		skinCancerClass = owlModel.getOWLNamedClass(Naming.CLASS_SKIN_CANCER);
-		skinCancerNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_SKIN_CANCER_NAME);
-		// has skin cancer
-		hasSkinCancerProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_SKIN_CANCER);
-		isSkinCancerOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_SKIN_CANCER_OF);
 		
-		// musculoskeletal disorder
-		musculoskeletalDisorderClass = owlModel.getOWLNamedClass(Naming.CLASS_MUSCULOSKELETAL_DISORDER);
-		musculoskeletalDisorderNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MUSCULOSKELETAL_DISORDER_NAME);
-		// has musculoskeletal disorder
-		hasMusculoskeletalDisorderProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_MUSCULOSKELETAL_DISORDER);
-		isMusculoskeletalDisorderOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MUSCULOSKELETAL_DISORDER_OF);
+		// HAR
+		HARClass = owlModel.getOWLNamedClass(Naming.CLASS_HAR);
+		HARNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_HAR_NAME);
+		// has HAR
+		hasHARProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_HAR);
+		isHAROfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_HAR_OF);
+		
+//		// skin cancer
+//		skinCancerClass = owlModel.getOWLNamedClass(Naming.CLASS_SKIN_CANCER);
+//		skinCancerNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_SKIN_CANCER_NAME);
+//		// has skin cancer
+//		hasSkinCancerProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_SKIN_CANCER);
+//		isSkinCancerOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_SKIN_CANCER_OF);
+//		
+//		// musculoskeletal disorder
+//		musculoskeletalDisorderClass = owlModel.getOWLNamedClass(Naming.CLASS_MUSCULOSKELETAL_DISORDER);
+//		musculoskeletalDisorderNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MUSCULOSKELETAL_DISORDER_NAME);
+//		// has musculoskeletal disorder
+//		hasMusculoskeletalDisorderProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_MUSCULOSKELETAL_DISORDER);
+//		isMusculoskeletalDisorderOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MUSCULOSKELETAL_DISORDER_OF);
 		
 		// data
 		dataClass = owlModel.getOWLNamedClass(Naming.CLASS_DATA);
@@ -391,11 +446,11 @@ public class OntologyIndividual {
 		gyroscopeNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_GYROSCOPE_NAME);
 		hasGyroscopeProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_GYROSCOPE);
 		isGyroscopeOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_GYROSCOPE_OF);
-		// has medical imaging device
-		dataSourceTypeMedicalImagingDeviceClass = owlModel.getOWLNamedClass(Naming.CLASS_DATA_SOURCE_TYPE_MEDICALIMAGINGDEVICE);
-		medicalImagingDeviceNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MEDICALIMAGINGDEVICE_NAME);
-		hasMedicalImagingDeviceProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_MEDICALIMAGINGDEVICE);
-		isMedicalImagingDeviceOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MEDICALIMAGINGDEVICE_OF);
+//		// has medical imaging device
+//		dataSourceTypeMedicalImagingDeviceClass = owlModel.getOWLNamedClass(Naming.CLASS_DATA_SOURCE_TYPE_MEDICALIMAGINGDEVICE);
+//		medicalImagingDeviceNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MEDICALIMAGINGDEVICE_NAME);
+//		hasMedicalImagingDeviceProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_MEDICALIMAGINGDEVICE);
+//		isMedicalImagingDeviceOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MEDICALIMAGINGDEVICE_OF);
 		
 		// model
 		modelClass = owlModel.getOWLNamedClass(Naming.CLASS_MODEL);
@@ -414,6 +469,39 @@ public class OntologyIndividual {
 		isModelOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_MODEL_OF);
 		
 		// subclass of model
+		
+		// backend
+		modelBackendClass = owlModel.getOWLNamedClass(Naming.CLASS_MODEL_BACKEND);
+		modelBackendNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_BACKEND_NAME);
+		// model has backend
+		hasBackendProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_BACKEND);
+		isBackendOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_BACKEND_OF);
+		
+		// loss function
+		modelLossFunctionClass = owlModel.getOWLNamedClass(Naming.CLASS_MODEL_LOSS_FUNCTION);
+		modelLossFunctionNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_LOSS_FUNCTION_NAME);
+		// model has loss function
+		hasLossFunctionProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_LOSS_FUNCTION);
+		isLossFunctionOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_LOSS_FUNCTION_OF);
+		
+		// optimiser
+		modelOptimiserClass = owlModel.getOWLNamedClass(Naming.CLASS_MODEL_OPTIMISER);
+		modelOptimiserNameProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_OPTIMISER_NAME);
+		// model has optimiser
+		hasOptimiserProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_OPTIMISER);
+		isOptimiserOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_OPTIMISER_OF);
+		
+		// input
+		modelInputClass = owlModel.getOWLNamedClass(Naming.CLASS_MODEL_INPUT);
+		modelInputShapeProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_INPUT_SHAPE);
+		hasInputProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_INPUT);
+		isInputOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_INPUT_OF);
+		
+		// output
+		modelOutputClass = owlModel.getOWLNamedClass(Naming.CLASS_MODEL_OUTPUT);
+		modelOutputShapeProperty = owlModel.getOWLDatatypeProperty(Naming.DATA_PROPERTY_MODEL_OUTPUT_SHAPE);
+		hasOutputProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_OUTPUT);
+		isOutputOfProperty = owlModel.getOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_OUTPUT_OF);
 		
 		// performance
 		performanceClass = owlModel.getOWLNamedClass(Naming.CLASS_PERFORMANCE);
@@ -674,76 +762,87 @@ public class OntologyIndividual {
 	}
 	
 	public void createIndividualOne() {
-		/**
-		 * application scope
-		 */
+		
 		// data
 		RDFIndividual dataIndividual = dataClass.createOWLIndividual("data" + "-" + UUIDUtil.creatUUID());
-		dataIndividual.addPropertyValue(dataNameProperty, "Segmented Nuclei Images");
-		dataIndividual.addPropertyValue(dataFeatureProperty, "cell nuceli");
-		String dataDescription = "This dataset contains a large number of segmented nuclei images. "
-				+ "The images were acquired under a variety of conditions and vary in the cell type, magnification, and imaging modality (brightfield vs. fluorescence). "
-				+ "The dataset is designed to challenge an algorithm's ability to generalize across these variations.";
+		dataIndividual.addPropertyValue(dataNameProperty, "Human Activity Recognition Using Smartphones Data Set");
+		dataIndividual.addPropertyValue(dataFeatureProperty, "walking, walking_upstairs, walking_downstairs, sitting, standing, laying");
+		String dataDescription = "The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.\r\n" + 
+				"\r\n" + 
+				"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.\r\n";
 		dataIndividual.addPropertyValue(dataDescriptionProperty, dataDescription);
-		dataIndividual.addPropertyValue(dataResourceProperty,"https://www.kaggle.com/c/data-science-bowl-2018/data");
+		dataIndividual.addPropertyValue(dataResourceProperty,"http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI HAR Dataset.zip");
 		// data has data type
 		RDFIndividual dataSourceTypeIndividual = dataSourceTypeClass.createOWLIndividual("senoryType" + "-" + UUIDUtil.creatUUID());
 		dataIndividual.addPropertyValue (hasDataSourceTypeProperty,dataSourceTypeIndividual);
 		dataSourceTypeIndividual.addPropertyValue(isDataSourceTypeOfProperty, dataIndividual);
-		// data type has medical imaging device data
-		RDFIndividual medicalImagingDeviceIndividual = dataSourceTypeMedicalImagingDeviceClass.createOWLIndividual("medicalImagingDevice" + "-" + UUIDUtil.creatUUID());
-		medicalImagingDeviceIndividual.addPropertyValue(medicalImagingDeviceNameProperty, "Medical Imaging Device");
-		dataSourceTypeIndividual.addPropertyValue(hasMedicalImagingDeviceProperty,medicalImagingDeviceIndividual);
-		medicalImagingDeviceIndividual.addPropertyValue(isMedicalImagingDeviceOfProperty,dataSourceTypeIndividual);
-		
+		// data type has accelerometer data
+		RDFIndividual accelerometerIndividual = dataSourceTypeAccelerometerClass.createOWLIndividual("accelerometer" + "-" + UUIDUtil.creatUUID());
+		accelerometerIndividual.addPropertyValue(accelerometerNameProperty, "Accelerometer");
+		dataSourceTypeIndividual.addPropertyValue(hasAccelerometerProperty,accelerometerIndividual);
+		accelerometerIndividual.addPropertyValue(isAccelerometerOfProperty,dataSourceTypeIndividual);
+		// data type has gyroscope data
+		RDFIndividual gyroscopeIndividual = dataSourceTypeGyroscopeClass.createOWLIndividual("gyroscope" + "-" + UUIDUtil.creatUUID());
+		gyroscopeIndividual.addPropertyValue(gyroscopeNameProperty,"Gyroscope");
+		dataSourceTypeIndividual.addPropertyValue(hasGyroscopeProperty,gyroscopeIndividual);
+		gyroscopeIndividual.addPropertyValue(isGyroscopeOfProperty,dataSourceTypeIndividual);
 		
 		// application
 		RDFIndividual applicationIndividual = applicationClass.createOWLIndividual("application" + "-" + UUIDUtil.creatUUID());
-		applicationIndividual.addPropertyValue(applicationNameProperty, "Cell Nuclei Detection");
-		// RDFIndividual applicationDomainIndividual = applicationDomainClass.createOWLIndividual("applicationDomain"+"-"+ UUIDUtil.creatUUID());
-		// applicationIndividual.addPropertyValue(hasApplicationDomainProperty, applicationDomainIndividual);
-		// applicationDomainIndividual.addPropertyValue(isApplicationDomainOfProperty, applicationIndividual);
+		applicationIndividual.addPropertyValue(applicationNameProperty, "Application 1");
 		RDFIndividual applicationHealthcareIndividual = applicationHealthcareClass.createOWLIndividual("applicationHealthcare"+"-"+ UUIDUtil.creatUUID());
 		applicationHealthcareIndividual.addPropertyValue(applicationHealthcareNameProperty, "Healthcare Application 1");
 		applicationIndividual.addPropertyValue(hasHealthcareApplicationProperty, applicationHealthcareIndividual);
 		applicationHealthcareIndividual.addPropertyValue(isHealthcareApplicationOfProperty, applicationIndividual);
-//		RDFIndividual applicationSkinCancerIndividual = skinCancerClass.createOWLIndividual("applicationSkinCancer"+"-"+ UUIDUtil.creatUUID());
-//		applicationSkinCancerIndividual.addPropertyValue(skinCancerNameProperty, "Skin Cancer");
-//		applicationHealthcareIndividual.addPropertyValue(hasSkinCancerProperty, applicationSkinCancerIndividual);
-//		applicationSkinCancerIndividual.addPropertyValue(isSkinCancerOfProperty, applicationHealthcareIndividual);
-		RDFIndividual applicationSkinCancerIndividual = skinCancerClass.createOWLIndividual("applicationSkinCancer"+"-"+ UUIDUtil.creatUUID());
-		applicationSkinCancerIndividual.addPropertyValue(skinCancerNameProperty, "Skin Cancer");
-		applicationHealthcareIndividual.addPropertyValue(hasSkinCancerProperty, applicationSkinCancerIndividual);
-		applicationSkinCancerIndividual.addPropertyValue(isSkinCancerOfProperty, applicationHealthcareIndividual);
+		RDFIndividual applicationHARIndividual = HARClass.createOWLIndividual("applicationHAR"+"-"+ UUIDUtil.creatUUID());
+		applicationHARIndividual.addPropertyValue(HARNameProperty, "HAR in UCI smartphone data set");
+		applicationHealthcareIndividual.addPropertyValue(hasHARProperty, applicationHARIndividual);
+		applicationHARIndividual.addPropertyValue(isHAROfProperty, applicationHealthcareIndividual);
 		
 		// application has data
 		applicationIndividual.addPropertyValue(hasDataProperty, dataIndividual);
 		dataIndividual.addPropertyValue(isDataOfProperty, applicationIndividual);
 		
-		for (int i = 0; i<10;i++) {
-			// model
-			RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
-			modelIndividual.addPropertyValue(modelNameProperty, "CNN");
-			modelIndividual.addPropertyValue(modelDescriptionProperty, "Keras");
-			modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model1"+ i +".json");
-			// application has many models
-			applicationIndividual.addPropertyValue(hasModelProperty, modelIndividual);
-			modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual);
 		
-		
-			/**
-			 *  model scope
-			 */
-			// model has performance
-			// RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-			// performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8) + new Float (i)/100);
-			// performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.7) + new Float (i)/100);
-			// performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.6) + new Float (i)/100);
-			// performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8) + new Float (i)/100);
-			// modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-			// performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
+		for (int i = 0; i<6;i++) {
 			
 			if (i == 0) {
+				
+				// model
+				RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(modelNameProperty, "CNN-HAR-Keras");
+				modelIndividual.addPropertyValue(modelDescriptionProperty, "CNN trained by HAR dataset and Keras Library");
+				modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model1"+ i +".json");
+				// application has many models
+				applicationIndividual.addPropertyValue(hasModelProperty, modelIndividual);
+				modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual);
+				
+				// model has backend
+				RDFIndividual modelBackendIndividual = modelBackendClass.createOWLIndividual("modelBackend" + "-" + UUIDUtil.creatUUID());
+				modelBackendIndividual.addPropertyValue(modelBackendNameProperty, "Keras");
+				modelIndividual.addPropertyValue(hasBackendProperty, modelBackendIndividual);
+				modelBackendIndividual.addPropertyValue(isBackendOfProperty, modelIndividual);
+				// model has loss function
+				RDFIndividual modelLossFunctionIndividual = modelLossFunctionClass.createOWLIndividual("modelLossFunction" + "-" + UUIDUtil.creatUUID());
+				modelLossFunctionIndividual.addPropertyValue(modelLossFunctionNameProperty, "CrossEntropy");
+				modelIndividual.addPropertyValue(hasLossFunctionProperty, modelLossFunctionIndividual);
+				modelLossFunctionIndividual.addPropertyValue(isLossFunctionOfProperty, modelIndividual);
+				// model has optimiser
+				RDFIndividual modelOptimiserIndividual = modelOptimiserClass.createOWLIndividual("modelOptimiser" + "-" + UUIDUtil.creatUUID());
+				modelOptimiserIndividual.addPropertyValue(modelOptimiserNameProperty, "Adam");
+				modelIndividual.addPropertyValue(hasOptimiserProperty, modelOptimiserIndividual);
+				modelOptimiserIndividual.addPropertyValue(isOptimiserOfProperty, modelIndividual);
+				// model has input
+				RDFIndividual modelInputIndividual = modelInputClass.createOWLIndividual("modelInput" + "-" + UUIDUtil.creatUUID());
+				modelInputIndividual.addPropertyValue(modelInputShapeProperty, "(128,9)");
+				modelIndividual.addPropertyValue(hasInputProperty, modelInputIndividual);
+				modelInputIndividual.addPropertyValue(isInputOfProperty, modelIndividual);
+				// model has output
+				RDFIndividual modelOutputIndividual = modelOutputClass.createOWLIndividual("modelOutput" + "-" + UUIDUtil.creatUUID());
+				modelOutputIndividual.addPropertyValue(modelOutputShapeProperty, "(6)");
+				modelIndividual.addPropertyValue(hasOutputProperty, modelOutputIndividual);
+				modelOutputIndividual.addPropertyValue(isOutputOfProperty, modelIndividual);
+				
 				// model has performance
 				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
 				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9026));
@@ -752,9 +851,336 @@ public class OntologyIndividual {
 				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9019));
 				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
 				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
+				
+				// model has model type
+				RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
+				modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
+				// model type has CNN
+				RDFIndividual modelTypeCNNIndividual = modelTypeCNNClass.createOWLIndividual("CNNType" + "-" + UUIDUtil.creatUUID());
+				modelTypeCNNIndividual.addPropertyValue(modelTypeCNNNameProperty, "CNN");
+				modelTypeIndividual.addPropertyValue(hasCNNTypeProperty, modelTypeCNNIndividual);
+				modelTypeCNNIndividual.addPropertyValue(isCNNTypeOfProperty, modelTypeIndividual);
+				
+				/**
+				 *  model layer
+				 */
+				
+				// layer 1 is convolution layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-convolution");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
+				coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
+				
+				// core layer type has layer1
+				RDFIndividual layerIndividual1 = convolutionLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
+				layerIndividual1.addPropertyValue(convolutionRankProperty, 1);
+				layerIndividual1.addPropertyValue(convolutionOutputChannelsProperty, 64);
+				layerIndividual1.addPropertyValue(convolutionKernelSizeProperty, "3");
+				layerIndividual1.addPropertyValue(convolutionStridesProperty, "1");
+				layerIndividual1.addPropertyValue(convolutionPaddingProperty, "valid");
+				// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
+				layerIndividual1.addPropertyValue(convolutionGroupsProperty, 1);
+				coreLayerIndividual1.addPropertyValue(hasConvolutionLayerProperty, layerIndividual1);
+				layerIndividual1.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual1);
+				
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual1 = owlModel.getOWLIndividual("relu");	
+				coreLayerIndividual1.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual1);
+				activationFunctionIndividual1.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual1);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual1 = weightClass.createOWLIndividual("weight1" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual1.addPropertyValue(hasWeightProperty, weightIndividual1);
+				weightIndividual1.addPropertyValue(isWeightOfProperty, coreLayerIndividual1);
+				// weight has initializer
+				RDFIndividual initializerIndividual1 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual1);
+				initializerIndividual1.addPropertyValue(isInitializerOfProperty, weightIndividual1);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual1 = biasClass.createOWLIndividual("bias1" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual1.addPropertyValue(hasBiasProperty, biasIndividual1);
+				biasIndividual1.addPropertyValue(isBiasOfProperty, coreLayerIndividual1);
+				// bias has initializer
+				RDFIndividual initializerIndividual2 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual2);
+				initializerIndividual2.addPropertyValue(isInitializerOfProperty, biasIndividual1);
+
+				
+				// layer 2 is convolution layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual2 = modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-convolution");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual2 = coreLayerClass.createOWLIndividual("coreLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual2);
+				coreLayerIndividual2.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual2);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual2 = coreLayerTypeClass.createOWLIndividual("coreLayerType2" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual2.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual2);
+//				coreLayerTypeIndividual2.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual2);
+				
+				// core layer type has layer2
+				RDFIndividual layerIndividual2 = convolutionLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
+				layerIndividual2.addPropertyValue(convolutionRankProperty, 1);
+				// layerIndividual2.addPropertyValue(convolutionInChannelsProperty, 1);
+				layerIndividual2.addPropertyValue(convolutionOutputChannelsProperty, 64);
+				layerIndividual2.addPropertyValue(convolutionKernelSizeProperty, "3");
+				layerIndividual2.addPropertyValue(convolutionStridesProperty, "1");
+				layerIndividual2.addPropertyValue(convolutionPaddingProperty, "valid");
+				// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
+				layerIndividual2.addPropertyValue(convolutionGroupsProperty, 1);
+				coreLayerIndividual2.addPropertyValue(hasConvolutionLayerProperty, layerIndividual2);
+				layerIndividual2.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual2);
+				
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual2 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual2.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual2);
+				activationFunctionIndividual2.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual2);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual2 = weightClass.createOWLIndividual("weight2" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual2.addPropertyValue(hasWeightProperty, weightIndividual2);
+				weightIndividual2.addPropertyValue(isWeightOfProperty, coreLayerIndividual2);
+				// weight argument has initializer
+				RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual3);
+				initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual2);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual2 = biasClass.createOWLIndividual("bias2" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual2.addPropertyValue(hasBiasProperty, biasIndividual2);
+				biasIndividual2.addPropertyValue(isBiasOfProperty, coreLayerIndividual2);
+				// bias argument has initializer
+				RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual4);
+				initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual2);
+				
+				
+				// layer 3 is dropout layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual3= modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dropout");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual3 = functionalLayerClass.createOWLIndividual("functionalLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual3);
+				functionalLayerIndividual3.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual3);
+				
+				// functional layer has dropout layer
+				RDFIndividual layerIndividual3 = dropoutLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
+				
+				layerIndividual3.addPropertyValue(dropoutRankProperty, 1);
+				layerIndividual3.addPropertyValue(dropoutRateProperty, new Float(0.5));
+				functionalLayerIndividual3.addPropertyValue(hasDropoutLayerProperty, layerIndividual3);
+				layerIndividual3.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual3);
+				
+				
+				// layer 4 is pooling layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual4= modelLayerClass.createOWLIndividual("modelLayer4" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual4.addPropertyValue(layerNameProperty, "layer4-pooling");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual4);
+				modelLayerIndividual4.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual4 = functionalLayerClass.createOWLIndividual("functionalLayer4" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual4.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual4);
+				functionalLayerIndividual4.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual4);
+				
+				// function layer has pooling layer
+				RDFIndividual layerIndividual4 = poolingLayerClass.createOWLIndividual("layer4" + "-" + UUIDUtil.creatUUID());
+				layerIndividual4.addPropertyValue(poolingRankProperty, 1);
+				layerIndividual4.addPropertyValue(poolingTypeProperty, "MaxPooling1D");
+				layerIndividual4.addPropertyValue(poolingKernelSizeProperty, "2");
+				layerIndividual4.addPropertyValue(poolingStridesProperty, "2");
+				layerIndividual4.addPropertyValue(poolingPaddingProperty, "valid");
+				functionalLayerIndividual4.addPropertyValue(hasPoolingLayerProperty, layerIndividual4);
+				layerIndividual4.addPropertyValue(isPoolingLayerOfProperty, functionalLayerIndividual4);
+				
+				
+				// layer 5 is reshaping layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual5= modelLayerClass.createOWLIndividual("modelLayer5" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual5.addPropertyValue(layerNameProperty, "layer5-reshaping");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual5);
+				modelLayerIndividual5.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual5 = functionalLayerClass.createOWLIndividual("functionalLayer5" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual5.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual5);
+				functionalLayerIndividual5.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual5);
+				
+				// functional layer has reshaping layer
+				RDFIndividual layerIndividual5 = reshapingLayerClass.createOWLIndividual("layer5" + "-" + UUIDUtil.creatUUID());
+				layerIndividual5.addPropertyValue(reshapingTypeProperty, "Flatten");
+				functionalLayerIndividual5.addPropertyValue(hasReshapingLayerProperty, layerIndividual5);
+				layerIndividual5.addPropertyValue(isReshapingLayerOfProperty, functionalLayerIndividual5);
+				
+				
+				// layer 6 is dense layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual6 = modelLayerClass.createOWLIndividual("modelLayer6" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual6.addPropertyValue(layerNameProperty, "layer6-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual6);
+				modelLayerIndividual6.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual6 = coreLayerClass.createOWLIndividual("coreLayer6" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual6.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual6);
+				coreLayerIndividual6.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual6);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual6 = coreLayerTypeClass.createOWLIndividual("coreLayerType6" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual6.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual6);
+//				coreLayerTypeIndividual6.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual6);
+				
+				// core layer type has layer 6
+				RDFIndividual layerIndividual6 = denseLayerClass.createOWLIndividual("layer6" + "-" + UUIDUtil.creatUUID());
+				layerIndividual6.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual6.addPropertyValue(hasDenseLayerProperty, layerIndividual6);
+				layerIndividual6.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual6);
+
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual6.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
+				activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual6);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight6" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual6.addPropertyValue(hasWeightProperty, weightIndividual3);
+				weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual6);
+				// weight has initializer
+				RDFIndividual initializerIndividual5 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual5);
+				initializerIndividual5.addPropertyValue(isInitializerOfProperty, weightIndividual3);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias6" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual6.addPropertyValue(hasBiasProperty, biasIndividual3);
+				biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual6);	
+				// bias has initializer
+				RDFIndividual initializerIndividual6 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual6);
+				initializerIndividual6.addPropertyValue(isInitializerOfProperty, biasIndividual3);
+				
+				// layer 7 is dense layer
+				// model has model layer
+				RDFIndividual modelLayerIndividual7 = modelLayerClass.createOWLIndividual("modelLayer7" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual7.addPropertyValue(layerNameProperty, "layer7-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual7);
+				modelLayerIndividual7.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual7 = coreLayerClass.createOWLIndividual("coreLayer7" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual7.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual7);
+				coreLayerIndividual7.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual7);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual7 = coreLayerTypeClass.createOWLIndividual("coreLayerType7" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual7.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual7);
+//				coreLayerTypeIndividual7.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual7);
+				
+				// core layer type has layer 7
+				RDFIndividual layerIndividual7 = denseLayerClass.createOWLIndividual("layer7" + "-" + UUIDUtil.creatUUID());
+				layerIndividual7.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual7.addPropertyValue(hasDenseLayerProperty, layerIndividual7);
+				layerIndividual7.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual7);
+						
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual4 = owlModel.getOWLIndividual("softmax");
+				coreLayerIndividual7.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual4);
+				activationFunctionIndividual4.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual7);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual4 = weightClass.createOWLIndividual("weight7" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual7.addPropertyValue(hasWeightProperty, weightIndividual4);
+				weightIndividual4.addPropertyValue(isWeightOfProperty, coreLayerIndividual7);
+				// weight has initializer
+				RDFIndividual initializerIndividual7 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual7);
+				initializerIndividual7.addPropertyValue(isInitializerOfProperty, weightIndividual4);
+						
+				//  core layer has bias
+				RDFIndividual biasIndividual4 = biasClass.createOWLIndividual("bias7" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual7.addPropertyValue(hasBiasProperty, biasIndividual4);
+				biasIndividual4.addPropertyValue(isBiasOfProperty, coreLayerIndividual7);
+				// bias has initializer
+				RDFIndividual initializerIndividual8 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual8);
+				initializerIndividual8.addPropertyValue(isInitializerOfProperty, biasIndividual4);
+				
+				// layer has previous layer
+				modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
+				modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
+				modelLayerIndividual4.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual4);
+				modelLayerIndividual5.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual4);
+				modelLayerIndividual4.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual5);
+				modelLayerIndividual6.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual5);
+				modelLayerIndividual5.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual6);
+				modelLayerIndividual7.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual6);
+				modelLayerIndividual6.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual7);
+				
 			}
 			
 			if (i == 1) {
+				// model
+				RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(modelNameProperty, "CNN-HAR-TensorFlow");
+				modelIndividual.addPropertyValue(modelDescriptionProperty, "CNN trained by HAR dataset and TensorFlow Library");
+				modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model1"+ i +".json");
+				// application has many models
+				applicationIndividual.addPropertyValue(hasModelProperty, modelIndividual);
+				modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual);
+				
+				// model has backend
+				RDFIndividual modelBackendIndividual = modelBackendClass.createOWLIndividual("modelBackend" + "-" + UUIDUtil.creatUUID());
+				modelBackendIndividual.addPropertyValue(modelBackendNameProperty, "TensorFlow");
+				modelIndividual.addPropertyValue(hasBackendProperty, modelBackendIndividual);
+				modelBackendIndividual.addPropertyValue(isBackendOfProperty, modelIndividual);
+				// model has loss function
+				RDFIndividual modelLossFunctionIndividual = modelLossFunctionClass.createOWLIndividual("modelLossFunction" + "-" + UUIDUtil.creatUUID());
+				modelLossFunctionIndividual.addPropertyValue(modelLossFunctionNameProperty, "CrossEntropy");
+				modelIndividual.addPropertyValue(hasLossFunctionProperty, modelLossFunctionIndividual);
+				modelLossFunctionIndividual.addPropertyValue(isLossFunctionOfProperty, modelIndividual);
+				// model has optimiser
+				RDFIndividual modelOptimiserIndividual = modelOptimiserClass.createOWLIndividual("modelOptimiser" + "-" + UUIDUtil.creatUUID());
+				modelOptimiserIndividual.addPropertyValue(modelOptimiserNameProperty, "Adam");
+				modelIndividual.addPropertyValue(hasOptimiserProperty, modelOptimiserIndividual);
+				modelOptimiserIndividual.addPropertyValue(isOptimiserOfProperty, modelIndividual);
+				// model has input
+				RDFIndividual modelInputIndividual = modelInputClass.createOWLIndividual("modelInput" + "-" + UUIDUtil.creatUUID());
+				modelInputIndividual.addPropertyValue(modelInputShapeProperty, "(128,9)");
+				modelIndividual.addPropertyValue(hasInputProperty, modelInputIndividual);
+				modelInputIndividual.addPropertyValue(isInputOfProperty, modelIndividual);
+				// model has output
+				RDFIndividual modelOutputIndividual = modelOutputClass.createOWLIndividual("modelOutput" + "-" + UUIDUtil.creatUUID());
+				modelOutputIndividual.addPropertyValue(modelOutputShapeProperty, "(6)");
+				modelIndividual.addPropertyValue(hasOutputProperty, modelOutputIndividual);
+				modelOutputIndividual.addPropertyValue(isOutputOfProperty, modelIndividual);
+				
 				// model has performance
 				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
 				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9172));
@@ -763,9 +1189,336 @@ public class OntologyIndividual {
 				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9173));
 				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
 				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
+				
+				// model has model type
+				RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
+				modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
+				// model type has CNN
+				RDFIndividual modelTypeCNNIndividual = modelTypeCNNClass.createOWLIndividual("CNNType" + "-" + UUIDUtil.creatUUID());
+				modelTypeCNNIndividual.addPropertyValue(modelTypeCNNNameProperty, "CNN");
+				modelTypeIndividual.addPropertyValue(hasCNNTypeProperty, modelTypeCNNIndividual);
+				modelTypeCNNIndividual.addPropertyValue(isCNNTypeOfProperty, modelTypeIndividual);
+				
+				/**
+				 *  model layer
+				 */
+				
+				// layer 1 is convolution layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-convolution");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
+				coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
+				
+				// core layer type has layer1
+				RDFIndividual layerIndividual1 = convolutionLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
+				layerIndividual1.addPropertyValue(convolutionRankProperty, 1);
+				layerIndividual1.addPropertyValue(convolutionOutputChannelsProperty, 64);
+				layerIndividual1.addPropertyValue(convolutionKernelSizeProperty, "3");
+				layerIndividual1.addPropertyValue(convolutionStridesProperty, "1");
+				layerIndividual1.addPropertyValue(convolutionPaddingProperty, "valid");
+				// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
+				layerIndividual1.addPropertyValue(convolutionGroupsProperty, 1);
+				coreLayerIndividual1.addPropertyValue(hasConvolutionLayerProperty, layerIndividual1);
+				layerIndividual1.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual1);
+				
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual1 = owlModel.getOWLIndividual("relu");	
+				coreLayerIndividual1.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual1);
+				activationFunctionIndividual1.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual1);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual1 = weightClass.createOWLIndividual("weight1" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual1.addPropertyValue(hasWeightProperty, weightIndividual1);
+				weightIndividual1.addPropertyValue(isWeightOfProperty, coreLayerIndividual1);
+				// weight has initializer
+				RDFIndividual initializerIndividual1 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual1);
+				initializerIndividual1.addPropertyValue(isInitializerOfProperty, weightIndividual1);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual1 = biasClass.createOWLIndividual("bias1" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual1.addPropertyValue(hasBiasProperty, biasIndividual1);
+				biasIndividual1.addPropertyValue(isBiasOfProperty, coreLayerIndividual1);
+				// bias has initializer
+				RDFIndividual initializerIndividual2 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual2);
+				initializerIndividual2.addPropertyValue(isInitializerOfProperty, biasIndividual1);
+
+				
+				// layer 2 is convolution layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual2 = modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-convolution");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual2 = coreLayerClass.createOWLIndividual("coreLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual2);
+				coreLayerIndividual2.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual2);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual2 = coreLayerTypeClass.createOWLIndividual("coreLayerType2" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual2.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual2);
+//				coreLayerTypeIndividual2.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual2);
+				
+				// core layer type has layer2
+				RDFIndividual layerIndividual2 = convolutionLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
+				layerIndividual2.addPropertyValue(convolutionRankProperty, 1);
+				// layerIndividual2.addPropertyValue(convolutionInChannelsProperty, 1);
+				layerIndividual2.addPropertyValue(convolutionOutputChannelsProperty, 64);
+				layerIndividual2.addPropertyValue(convolutionKernelSizeProperty, "3");
+				layerIndividual2.addPropertyValue(convolutionStridesProperty, "1");
+				layerIndividual2.addPropertyValue(convolutionPaddingProperty, "valid");
+				// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
+				layerIndividual2.addPropertyValue(convolutionGroupsProperty, 1);
+				coreLayerIndividual2.addPropertyValue(hasConvolutionLayerProperty, layerIndividual2);
+				layerIndividual2.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual2);
+				
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual2 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual2.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual2);
+				activationFunctionIndividual2.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual2);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual2 = weightClass.createOWLIndividual("weight2" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual2.addPropertyValue(hasWeightProperty, weightIndividual2);
+				weightIndividual2.addPropertyValue(isWeightOfProperty, coreLayerIndividual2);
+				// weight argument has initializer
+				RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual3);
+				initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual2);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual2 = biasClass.createOWLIndividual("bias2" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual2.addPropertyValue(hasBiasProperty, biasIndividual2);
+				biasIndividual2.addPropertyValue(isBiasOfProperty, coreLayerIndividual2);
+				// bias argument has initializer
+				RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual4);
+				initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual2);
+				
+				
+				// layer 3 is dropout layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual3= modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dropout");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual3 = functionalLayerClass.createOWLIndividual("functionalLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual3);
+				functionalLayerIndividual3.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual3);
+				
+				// functional layer has dropout layer
+				RDFIndividual layerIndividual3 = dropoutLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
+				
+				layerIndividual3.addPropertyValue(dropoutRankProperty, 1);
+				layerIndividual3.addPropertyValue(dropoutRateProperty, new Float(0.5));
+				functionalLayerIndividual3.addPropertyValue(hasDropoutLayerProperty, layerIndividual3);
+				layerIndividual3.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual3);
+				
+				
+				// layer 4 is pooling layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual4= modelLayerClass.createOWLIndividual("modelLayer4" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual4.addPropertyValue(layerNameProperty, "layer4-pooling");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual4);
+				modelLayerIndividual4.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual4 = functionalLayerClass.createOWLIndividual("functionalLayer4" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual4.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual4);
+				functionalLayerIndividual4.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual4);
+				
+				// function layer has pooling layer
+				RDFIndividual layerIndividual4 = poolingLayerClass.createOWLIndividual("layer4" + "-" + UUIDUtil.creatUUID());
+				layerIndividual4.addPropertyValue(poolingRankProperty, 1);
+				layerIndividual4.addPropertyValue(poolingTypeProperty, "MaxPooling1D");
+				layerIndividual4.addPropertyValue(poolingKernelSizeProperty, "2");
+				layerIndividual4.addPropertyValue(poolingStridesProperty, "2");
+				layerIndividual4.addPropertyValue(poolingPaddingProperty, "valid");
+				functionalLayerIndividual4.addPropertyValue(hasPoolingLayerProperty, layerIndividual4);
+				layerIndividual4.addPropertyValue(isPoolingLayerOfProperty, functionalLayerIndividual4);
+				
+				
+				// layer 5 is reshaping layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual5= modelLayerClass.createOWLIndividual("modelLayer5" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual5.addPropertyValue(layerNameProperty, "layer5-reshaping");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual5);
+				modelLayerIndividual5.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual5 = functionalLayerClass.createOWLIndividual("functionalLayer5" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual5.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual5);
+				functionalLayerIndividual5.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual5);
+				
+				// functional layer has reshaping layer
+				RDFIndividual layerIndividual5 = reshapingLayerClass.createOWLIndividual("layer5" + "-" + UUIDUtil.creatUUID());
+				layerIndividual5.addPropertyValue(reshapingTypeProperty, "Flatten");
+				functionalLayerIndividual5.addPropertyValue(hasReshapingLayerProperty, layerIndividual5);
+				layerIndividual5.addPropertyValue(isReshapingLayerOfProperty, functionalLayerIndividual5);
+				
+				
+				// layer 6 is dense layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual6 = modelLayerClass.createOWLIndividual("modelLayer6" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual6.addPropertyValue(layerNameProperty, "layer6-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual6);
+				modelLayerIndividual6.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual6 = coreLayerClass.createOWLIndividual("coreLayer6" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual6.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual6);
+				coreLayerIndividual6.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual6);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual6 = coreLayerTypeClass.createOWLIndividual("coreLayerType6" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual6.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual6);
+//				coreLayerTypeIndividual6.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual6);
+				
+				// core layer type has layer 6
+				RDFIndividual layerIndividual6 = denseLayerClass.createOWLIndividual("layer6" + "-" + UUIDUtil.creatUUID());
+				layerIndividual6.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual6.addPropertyValue(hasDenseLayerProperty, layerIndividual6);
+				layerIndividual6.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual6);
+
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual6.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
+				activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual6);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight6" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual6.addPropertyValue(hasWeightProperty, weightIndividual3);
+				weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual6);
+				// weight has initializer
+				RDFIndividual initializerIndividual5 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual5);
+				initializerIndividual5.addPropertyValue(isInitializerOfProperty, weightIndividual3);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias6" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual6.addPropertyValue(hasBiasProperty, biasIndividual3);
+				biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual6);	
+				// bias has initializer
+				RDFIndividual initializerIndividual6 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual6);
+				initializerIndividual6.addPropertyValue(isInitializerOfProperty, biasIndividual3);
+				
+				// layer 7 is dense layer
+				// model has model layer
+				RDFIndividual modelLayerIndividual7 = modelLayerClass.createOWLIndividual("modelLayer7" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual7.addPropertyValue(layerNameProperty, "layer7-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual7);
+				modelLayerIndividual7.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual7 = coreLayerClass.createOWLIndividual("coreLayer7" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual7.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual7);
+				coreLayerIndividual7.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual7);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual7 = coreLayerTypeClass.createOWLIndividual("coreLayerType7" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual7.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual7);
+//				coreLayerTypeIndividual7.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual7);
+				
+				// core layer type has layer 7
+				RDFIndividual layerIndividual7 = denseLayerClass.createOWLIndividual("layer7" + "-" + UUIDUtil.creatUUID());
+				layerIndividual7.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual7.addPropertyValue(hasDenseLayerProperty, layerIndividual7);
+				layerIndividual7.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual7);
+						
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual4 = owlModel.getOWLIndividual("softmax");
+				coreLayerIndividual7.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual4);
+				activationFunctionIndividual4.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual7);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual4 = weightClass.createOWLIndividual("weight7" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual7.addPropertyValue(hasWeightProperty, weightIndividual4);
+				weightIndividual4.addPropertyValue(isWeightOfProperty, coreLayerIndividual7);
+				// weight has initializer
+				RDFIndividual initializerIndividual7 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual7);
+				initializerIndividual7.addPropertyValue(isInitializerOfProperty, weightIndividual4);
+						
+				//  core layer has bias
+				RDFIndividual biasIndividual4 = biasClass.createOWLIndividual("bias7" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual7.addPropertyValue(hasBiasProperty, biasIndividual4);
+				biasIndividual4.addPropertyValue(isBiasOfProperty, coreLayerIndividual7);
+				// bias has initializer
+				RDFIndividual initializerIndividual8 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual8);
+				initializerIndividual8.addPropertyValue(isInitializerOfProperty, biasIndividual4);
+				
+				// layer has previous layer
+				modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
+				modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
+				modelLayerIndividual4.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual4);
+				modelLayerIndividual5.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual4);
+				modelLayerIndividual4.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual5);
+				modelLayerIndividual6.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual5);
+				modelLayerIndividual5.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual6);
+				modelLayerIndividual7.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual6);
+				modelLayerIndividual6.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual7);
+				
 			}
 			
 			if (i == 2) {
+				// model
+				RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(modelNameProperty, "CNN-HAR-Pytorch");
+				modelIndividual.addPropertyValue(modelDescriptionProperty, "CNN trained by HAR dataset and Pytorch Library");
+				modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model1"+ i +".json");
+				// application has many models
+				applicationIndividual.addPropertyValue(hasModelProperty, modelIndividual);
+				modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual);
+				
+				// model has backend
+				RDFIndividual modelBackendIndividual = modelBackendClass.createOWLIndividual("modelBackend" + "-" + UUIDUtil.creatUUID());
+				modelBackendIndividual.addPropertyValue(modelBackendNameProperty, "Pytorch");
+				modelIndividual.addPropertyValue(hasBackendProperty, modelBackendIndividual);
+				modelBackendIndividual.addPropertyValue(isBackendOfProperty, modelIndividual);
+				// model has loss function
+				RDFIndividual modelLossFunctionIndividual = modelLossFunctionClass.createOWLIndividual("modelLossFunction" + "-" + UUIDUtil.creatUUID());
+				modelLossFunctionIndividual.addPropertyValue(modelLossFunctionNameProperty, "CrossEntropy");
+				modelIndividual.addPropertyValue(hasLossFunctionProperty, modelLossFunctionIndividual);
+				modelLossFunctionIndividual.addPropertyValue(isLossFunctionOfProperty, modelIndividual);
+				// model has optimiser
+				RDFIndividual modelOptimiserIndividual = modelOptimiserClass.createOWLIndividual("modelOptimiser" + "-" + UUIDUtil.creatUUID());
+				modelOptimiserIndividual.addPropertyValue(modelOptimiserNameProperty, "Adam");
+				modelIndividual.addPropertyValue(hasOptimiserProperty, modelOptimiserIndividual);
+				modelOptimiserIndividual.addPropertyValue(isOptimiserOfProperty, modelIndividual);
+				// model has input
+				RDFIndividual modelInputIndividual = modelInputClass.createOWLIndividual("modelInput" + "-" + UUIDUtil.creatUUID());
+				modelInputIndividual.addPropertyValue(modelInputShapeProperty, "(128,9)");
+				modelIndividual.addPropertyValue(hasInputProperty, modelInputIndividual);
+				modelInputIndividual.addPropertyValue(isInputOfProperty, modelIndividual);
+				// model has output
+				RDFIndividual modelOutputIndividual = modelOutputClass.createOWLIndividual("modelOutput" + "-" + UUIDUtil.creatUUID());
+				modelOutputIndividual.addPropertyValue(modelOutputShapeProperty, "(6)");
+				modelIndividual.addPropertyValue(hasOutputProperty, modelOutputIndividual);
+				modelOutputIndividual.addPropertyValue(isOutputOfProperty, modelIndividual);
+				
 				// model has performance
 				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
 				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9022));
@@ -774,450 +1527,335 @@ public class OntologyIndividual {
 				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9027));
 				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
 				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
+				
+				// model has model type
+				RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
+				modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
+				// model type has CNN
+				RDFIndividual modelTypeCNNIndividual = modelTypeCNNClass.createOWLIndividual("CNNType" + "-" + UUIDUtil.creatUUID());
+				modelTypeCNNIndividual.addPropertyValue(modelTypeCNNNameProperty, "CNN");
+				modelTypeIndividual.addPropertyValue(hasCNNTypeProperty, modelTypeCNNIndividual);
+				modelTypeCNNIndividual.addPropertyValue(isCNNTypeOfProperty, modelTypeIndividual);
+				
+				/**
+				 *  model layer
+				 */
+				
+				// layer 1 is convolution layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-convolution");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
+				coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
+				
+				// core layer type has layer1
+				RDFIndividual layerIndividual1 = convolutionLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
+				layerIndividual1.addPropertyValue(convolutionRankProperty, 1);
+				layerIndividual1.addPropertyValue(convolutionOutputChannelsProperty, 64);
+				layerIndividual1.addPropertyValue(convolutionKernelSizeProperty, "3");
+				layerIndividual1.addPropertyValue(convolutionStridesProperty, "1");
+				layerIndividual1.addPropertyValue(convolutionPaddingProperty, "valid");
+				// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
+				layerIndividual1.addPropertyValue(convolutionGroupsProperty, 1);
+				coreLayerIndividual1.addPropertyValue(hasConvolutionLayerProperty, layerIndividual1);
+				layerIndividual1.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual1);
+				
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual1 = owlModel.getOWLIndividual("relu");	
+				coreLayerIndividual1.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual1);
+				activationFunctionIndividual1.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual1);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual1 = weightClass.createOWLIndividual("weight1" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual1.addPropertyValue(hasWeightProperty, weightIndividual1);
+				weightIndividual1.addPropertyValue(isWeightOfProperty, coreLayerIndividual1);
+				// weight has initializer
+				RDFIndividual initializerIndividual1 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual1);
+				initializerIndividual1.addPropertyValue(isInitializerOfProperty, weightIndividual1);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual1 = biasClass.createOWLIndividual("bias1" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual1.addPropertyValue(hasBiasProperty, biasIndividual1);
+				biasIndividual1.addPropertyValue(isBiasOfProperty, coreLayerIndividual1);
+				// bias has initializer
+				RDFIndividual initializerIndividual2 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual2);
+				initializerIndividual2.addPropertyValue(isInitializerOfProperty, biasIndividual1);
+
+				
+				// layer 2 is convolution layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual2 = modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-convolution");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual2 = coreLayerClass.createOWLIndividual("coreLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual2);
+				coreLayerIndividual2.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual2);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual2 = coreLayerTypeClass.createOWLIndividual("coreLayerType2" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual2.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual2);
+//				coreLayerTypeIndividual2.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual2);
+				
+				// core layer type has layer2
+				RDFIndividual layerIndividual2 = convolutionLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
+				layerIndividual2.addPropertyValue(convolutionRankProperty, 1);
+				// layerIndividual2.addPropertyValue(convolutionInChannelsProperty, 1);
+				layerIndividual2.addPropertyValue(convolutionOutputChannelsProperty, 64);
+				layerIndividual2.addPropertyValue(convolutionKernelSizeProperty, "3");
+				layerIndividual2.addPropertyValue(convolutionStridesProperty, "1");
+				layerIndividual2.addPropertyValue(convolutionPaddingProperty, "valid");
+				// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
+				layerIndividual2.addPropertyValue(convolutionGroupsProperty, 1);
+				coreLayerIndividual2.addPropertyValue(hasConvolutionLayerProperty, layerIndividual2);
+				layerIndividual2.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual2);
+				
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual2 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual2.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual2);
+				activationFunctionIndividual2.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual2);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual2 = weightClass.createOWLIndividual("weight2" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual2.addPropertyValue(hasWeightProperty, weightIndividual2);
+				weightIndividual2.addPropertyValue(isWeightOfProperty, coreLayerIndividual2);
+				// weight argument has initializer
+				RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual3);
+				initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual2);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual2 = biasClass.createOWLIndividual("bias2" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual2.addPropertyValue(hasBiasProperty, biasIndividual2);
+				biasIndividual2.addPropertyValue(isBiasOfProperty, coreLayerIndividual2);
+				// bias argument has initializer
+				RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual4);
+				initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual2);
+				
+				
+				// layer 3 is dropout layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual3= modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dropout");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual3 = functionalLayerClass.createOWLIndividual("functionalLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual3);
+				functionalLayerIndividual3.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual3);
+				
+				// functional layer has dropout layer
+				RDFIndividual layerIndividual3 = dropoutLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
+				
+				layerIndividual3.addPropertyValue(dropoutRankProperty, 1);
+				layerIndividual3.addPropertyValue(dropoutRateProperty, new Float(0.5));
+				functionalLayerIndividual3.addPropertyValue(hasDropoutLayerProperty, layerIndividual3);
+				layerIndividual3.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual3);
+				
+				
+				// layer 4 is pooling layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual4= modelLayerClass.createOWLIndividual("modelLayer4" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual4.addPropertyValue(layerNameProperty, "layer4-pooling");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual4);
+				modelLayerIndividual4.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual4 = functionalLayerClass.createOWLIndividual("functionalLayer4" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual4.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual4);
+				functionalLayerIndividual4.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual4);
+				
+				// function layer has pooling layer
+				RDFIndividual layerIndividual4 = poolingLayerClass.createOWLIndividual("layer4" + "-" + UUIDUtil.creatUUID());
+				layerIndividual4.addPropertyValue(poolingRankProperty, 1);
+				layerIndividual4.addPropertyValue(poolingTypeProperty, "MaxPooling1D");
+				layerIndividual4.addPropertyValue(poolingKernelSizeProperty, "2");
+				layerIndividual4.addPropertyValue(poolingStridesProperty, "2");
+				layerIndividual4.addPropertyValue(poolingPaddingProperty, "valid");
+				functionalLayerIndividual4.addPropertyValue(hasPoolingLayerProperty, layerIndividual4);
+				layerIndividual4.addPropertyValue(isPoolingLayerOfProperty, functionalLayerIndividual4);
+				
+				
+				// layer 5 is reshaping layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual5= modelLayerClass.createOWLIndividual("modelLayer5" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual5.addPropertyValue(layerNameProperty, "layer5-reshaping");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual5);
+				modelLayerIndividual5.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual5 = functionalLayerClass.createOWLIndividual("functionalLayer5" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual5.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual5);
+				functionalLayerIndividual5.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual5);
+				
+				// functional layer has reshaping layer
+				RDFIndividual layerIndividual5 = reshapingLayerClass.createOWLIndividual("layer5" + "-" + UUIDUtil.creatUUID());
+				layerIndividual5.addPropertyValue(reshapingTypeProperty, "Flatten");
+				functionalLayerIndividual5.addPropertyValue(hasReshapingLayerProperty, layerIndividual5);
+				layerIndividual5.addPropertyValue(isReshapingLayerOfProperty, functionalLayerIndividual5);
+				
+				
+				// layer 6 is dense layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual6 = modelLayerClass.createOWLIndividual("modelLayer6" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual6.addPropertyValue(layerNameProperty, "layer6-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual6);
+				modelLayerIndividual6.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual6 = coreLayerClass.createOWLIndividual("coreLayer6" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual6.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual6);
+				coreLayerIndividual6.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual6);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual6 = coreLayerTypeClass.createOWLIndividual("coreLayerType6" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual6.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual6);
+//				coreLayerTypeIndividual6.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual6);
+				
+				// core layer type has layer 6
+				RDFIndividual layerIndividual6 = denseLayerClass.createOWLIndividual("layer6" + "-" + UUIDUtil.creatUUID());
+				layerIndividual6.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual6.addPropertyValue(hasDenseLayerProperty, layerIndividual6);
+				layerIndividual6.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual6);
+
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual6.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
+				activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual6);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight6" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual6.addPropertyValue(hasWeightProperty, weightIndividual3);
+				weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual6);
+				// weight has initializer
+				RDFIndividual initializerIndividual5 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual5);
+				initializerIndividual5.addPropertyValue(isInitializerOfProperty, weightIndividual3);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias6" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual6.addPropertyValue(hasBiasProperty, biasIndividual3);
+				biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual6);	
+				// bias has initializer
+				RDFIndividual initializerIndividual6 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual6);
+				initializerIndividual6.addPropertyValue(isInitializerOfProperty, biasIndividual3);
+				
+				// layer 7 is dense layer
+				// model has model layer
+				RDFIndividual modelLayerIndividual7 = modelLayerClass.createOWLIndividual("modelLayer7" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual7.addPropertyValue(layerNameProperty, "layer7-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual7);
+				modelLayerIndividual7.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual7 = coreLayerClass.createOWLIndividual("coreLayer7" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual7.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual7);
+				coreLayerIndividual7.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual7);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual7 = coreLayerTypeClass.createOWLIndividual("coreLayerType7" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual7.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual7);
+//				coreLayerTypeIndividual7.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual7);
+				
+				// core layer type has layer 7
+				RDFIndividual layerIndividual7 = denseLayerClass.createOWLIndividual("layer7" + "-" + UUIDUtil.creatUUID());
+				layerIndividual7.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual7.addPropertyValue(hasDenseLayerProperty, layerIndividual7);
+				layerIndividual7.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual7);
+						
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual4 = owlModel.getOWLIndividual("softmax");
+				coreLayerIndividual7.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual4);
+				activationFunctionIndividual4.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual7);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual4 = weightClass.createOWLIndividual("weight7" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual7.addPropertyValue(hasWeightProperty, weightIndividual4);
+				weightIndividual4.addPropertyValue(isWeightOfProperty, coreLayerIndividual7);
+				// weight has initializer
+				RDFIndividual initializerIndividual7 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual7);
+				initializerIndividual7.addPropertyValue(isInitializerOfProperty, weightIndividual4);
+						
+				//  core layer has bias
+				RDFIndividual biasIndividual4 = biasClass.createOWLIndividual("bias7" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual7.addPropertyValue(hasBiasProperty, biasIndividual4);
+				biasIndividual4.addPropertyValue(isBiasOfProperty, coreLayerIndividual7);
+				// bias has initializer
+				RDFIndividual initializerIndividual8 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual8);
+				initializerIndividual8.addPropertyValue(isInitializerOfProperty, biasIndividual4);
+				
+				// layer has previous layer
+				modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
+				modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
+				modelLayerIndividual4.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual4);
+				modelLayerIndividual5.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual4);
+				modelLayerIndividual4.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual5);
+				modelLayerIndividual6.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual5);
+				modelLayerIndividual5.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual6);
+				modelLayerIndividual7.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual6);
+				modelLayerIndividual6.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual7);
 			}
-			
 			if (i == 3) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9104));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9102));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9129));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9104));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if (i == 4) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8873));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.8916));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.8907));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8873));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if (i == 5) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9226));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9232));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9241));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9229));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if (i == 6) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9131));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9135));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9141));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9132));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if (i == 7) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8978));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9015));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9016));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8986));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if (i == 8) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8985));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9004));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.8988));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8968));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if (i == 9) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9039));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9041));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9064));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9044));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			// model has model type
-			RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
-			modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
-			modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
-			// model type has CNN
-			RDFIndividual modelTypeCNNIndividual = modelTypeCNNClass.createOWLIndividual("CNNType" + "-" + UUIDUtil.creatUUID());
-			modelTypeCNNIndividual.addPropertyValue(modelTypeCNNNameProperty, "CNN");
-			modelTypeIndividual.addPropertyValue(hasCNNTypeProperty, modelTypeCNNIndividual);
-			modelTypeCNNIndividual.addPropertyValue(isCNNTypeOfProperty, modelTypeIndividual);
-			
-			/**
-			 *  model layer
-			 */
-			
-			// layer 1 is convolution layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-convolution");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
-			modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has core layer
-			RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
-			coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
-			
-//			// core layer has core layer type
-//			RDFIndividual coreLayerTypeIndividual1 = coreLayerTypeClass.createOWLIndividual("coreLayerType1" + "-" + UUIDUtil.creatUUID());
-//			coreLayerIndividual1.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual1);
-//			coreLayerTypeIndividual1.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual1);
-			
-			// core layer type has layer1
-			RDFIndividual layerIndividual1 = convolutionLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
-			layerIndividual1.addPropertyValue(convolutionRankProperty, 1);
-			layerIndividual1.addPropertyValue(convolutionOutputChannelsProperty, 64);
-			layerIndividual1.addPropertyValue(convolutionKernelSizeProperty, "3");
-			layerIndividual1.addPropertyValue(convolutionStridesProperty, "1");
-			layerIndividual1.addPropertyValue(convolutionPaddingProperty, "valid");
-			// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
-			layerIndividual1.addPropertyValue(convolutionGroupsProperty, 1);
-			coreLayerIndividual1.addPropertyValue(hasConvolutionLayerProperty, layerIndividual1);
-			layerIndividual1.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual1);
-			
-			// core layer has activation function
-			RDFIndividual activationFunctionIndividual1 = owlModel.getOWLIndividual("relu");	
-			coreLayerIndividual1.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual1);
-			activationFunctionIndividual1.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual1);
-			
-			// core layer has weight
-			RDFIndividual weightIndividual1 = weightClass.createOWLIndividual("weight1" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual1.addPropertyValue(hasWeightProperty, weightIndividual1);
-			weightIndividual1.addPropertyValue(isWeightOfProperty, coreLayerIndividual1);
-			// weight has initializer
-			RDFIndividual initializerIndividual1 = owlModel.getOWLIndividual("GlorotUniform");
-			weightIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual1);
-			initializerIndividual1.addPropertyValue(isInitializerOfProperty, weightIndividual1);
-			
-			// core layer has bias
-			RDFIndividual biasIndividual1 = biasClass.createOWLIndividual("bias1" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual1.addPropertyValue(hasBiasProperty, biasIndividual1);
-			biasIndividual1.addPropertyValue(isBiasOfProperty, coreLayerIndividual1);
-			// bias has initializer
-			RDFIndividual initializerIndividual2 = owlModel.getOWLIndividual("Zeros");
-			biasIndividual1.addPropertyValue(hasInitializerProperty, initializerIndividual2);
-			initializerIndividual2.addPropertyValue(isInitializerOfProperty, biasIndividual1);
-
-			
-			// layer 2 is convolution layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual2 = modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-convolution");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
-			modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has core layer
-			RDFIndividual coreLayerIndividual2 = coreLayerClass.createOWLIndividual("coreLayer2" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual2.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual2);
-			coreLayerIndividual2.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual2);
-			
-//			// core layer has core layer type
-//			RDFIndividual coreLayerTypeIndividual2 = coreLayerTypeClass.createOWLIndividual("coreLayerType2" + "-" + UUIDUtil.creatUUID());
-//			coreLayerIndividual2.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual2);
-//			coreLayerTypeIndividual2.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual2);
-			
-			// core layer type has layer2
-			RDFIndividual layerIndividual2 = convolutionLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
-			layerIndividual2.addPropertyValue(convolutionRankProperty, 1);
-			// layerIndividual2.addPropertyValue(convolutionInChannelsProperty, 1);
-			layerIndividual2.addPropertyValue(convolutionOutputChannelsProperty, 64);
-			layerIndividual2.addPropertyValue(convolutionKernelSizeProperty, "3");
-			layerIndividual2.addPropertyValue(convolutionStridesProperty, "1");
-			layerIndividual2.addPropertyValue(convolutionPaddingProperty, "valid");
-			// layerIndividual1.addPropertyValue(convolutionDilationProperty, null);
-			layerIndividual2.addPropertyValue(convolutionGroupsProperty, 1);
-			coreLayerIndividual2.addPropertyValue(hasConvolutionLayerProperty, layerIndividual2);
-			layerIndividual2.addPropertyValue(isConvolutionLayerOfProperty, coreLayerIndividual2);
-			
-			// core layer has activation function
-			RDFIndividual activationFunctionIndividual2 = owlModel.getOWLIndividual("relu");
-			coreLayerIndividual2.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual2);
-			activationFunctionIndividual2.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual2);
-			
-			// core layer has weight
-			RDFIndividual weightIndividual2 = weightClass.createOWLIndividual("weight2" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual2.addPropertyValue(hasWeightProperty, weightIndividual2);
-			weightIndividual2.addPropertyValue(isWeightOfProperty, coreLayerIndividual2);
-			// weight argument has initializer
-			RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
-			weightIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual3);
-			initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual2);
-			
-			// core layer has bias
-			RDFIndividual biasIndividual2 = biasClass.createOWLIndividual("bias2" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual2.addPropertyValue(hasBiasProperty, biasIndividual2);
-			biasIndividual2.addPropertyValue(isBiasOfProperty, coreLayerIndividual2);
-			// bias argument has initializer
-			RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
-			biasIndividual2.addPropertyValue(hasInitializerProperty, initializerIndividual4);
-			initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual2);
-			
-			
-			// layer 3 is dropout layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual3= modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dropout");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
-			modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has functional layer
-			RDFIndividual functionalLayerIndividual3 = functionalLayerClass.createOWLIndividual("functionalLayer3" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual3.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual3);
-			functionalLayerIndividual3.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual3);
-			
-			// functional layer has dropout layer
-			RDFIndividual layerIndividual3 = dropoutLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
-			
-			layerIndividual3.addPropertyValue(dropoutRankProperty, 1);
-			layerIndividual3.addPropertyValue(dropoutRateProperty, new Float(0.5));
-			functionalLayerIndividual3.addPropertyValue(hasDropoutLayerProperty, layerIndividual3);
-			layerIndividual3.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual3);
-			
-			
-			// layer 4 is pooling layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual4= modelLayerClass.createOWLIndividual("modelLayer4" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual4.addPropertyValue(layerNameProperty, "layer4-pooling");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual4);
-			modelLayerIndividual4.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has functional layer
-			RDFIndividual functionalLayerIndividual4 = functionalLayerClass.createOWLIndividual("functionalLayer4" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual4.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual4);
-			functionalLayerIndividual4.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual4);
-			
-			// function layer has pooling layer
-			RDFIndividual layerIndividual4 = poolingLayerClass.createOWLIndividual("layer4" + "-" + UUIDUtil.creatUUID());
-			layerIndividual4.addPropertyValue(poolingRankProperty, 1);
-			layerIndividual4.addPropertyValue(poolingTypeProperty, "MaxPooling1D");
-			layerIndividual4.addPropertyValue(poolingKernelSizeProperty, "2");
-			layerIndividual4.addPropertyValue(poolingStridesProperty, "2");
-			layerIndividual4.addPropertyValue(poolingPaddingProperty, "valid");
-			functionalLayerIndividual4.addPropertyValue(hasPoolingLayerProperty, layerIndividual4);
-			layerIndividual4.addPropertyValue(isPoolingLayerOfProperty, functionalLayerIndividual4);
-			
-			
-			// layer 5 is reshaping layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual5= modelLayerClass.createOWLIndividual("modelLayer5" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual5.addPropertyValue(layerNameProperty, "layer5-reshaping");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual5);
-			modelLayerIndividual5.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has functional layer
-			RDFIndividual functionalLayerIndividual5 = functionalLayerClass.createOWLIndividual("functionalLayer5" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual5.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual5);
-			functionalLayerIndividual5.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual5);
-			
-			// functional layer has reshaping layer
-			RDFIndividual layerIndividual5 = reshapingLayerClass.createOWLIndividual("layer5" + "-" + UUIDUtil.creatUUID());
-			layerIndividual5.addPropertyValue(reshapingTypeProperty, "Flatten");
-			functionalLayerIndividual5.addPropertyValue(hasReshapingLayerProperty, layerIndividual5);
-			layerIndividual5.addPropertyValue(isReshapingLayerOfProperty, functionalLayerIndividual5);
-			
-			
-			// layer 6 is dense layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual6 = modelLayerClass.createOWLIndividual("modelLayer6" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual6.addPropertyValue(layerNameProperty, "layer6-dense");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual6);
-			modelLayerIndividual6.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has core layer
-			RDFIndividual coreLayerIndividual6 = coreLayerClass.createOWLIndividual("coreLayer6" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual6.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual6);
-			coreLayerIndividual6.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual6);
-			
-//			// core layer has core layer type
-//			RDFIndividual coreLayerTypeIndividual6 = coreLayerTypeClass.createOWLIndividual("coreLayerType6" + "-" + UUIDUtil.creatUUID());
-//			coreLayerIndividual6.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual6);
-//			coreLayerTypeIndividual6.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual6);
-			
-			// core layer type has layer 6
-			RDFIndividual layerIndividual6 = denseLayerClass.createOWLIndividual("layer6" + "-" + UUIDUtil.creatUUID());
-			layerIndividual6.addPropertyValue(denseOutFeaturesProperty, 100);
-			coreLayerIndividual6.addPropertyValue(hasDenseLayerProperty, layerIndividual6);
-			layerIndividual6.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual6);
-
-			// core layer has activation function
-			RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
-			coreLayerIndividual6.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
-			activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual6);
-			
-			// core layer has weight
-			RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight6" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual6.addPropertyValue(hasWeightProperty, weightIndividual3);
-			weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual6);
-			// weight has initializer
-			RDFIndividual initializerIndividual5 = owlModel.getOWLIndividual("GlorotUniform");
-			weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual5);
-			initializerIndividual5.addPropertyValue(isInitializerOfProperty, weightIndividual3);
-			
-			// core layer has bias
-			RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias6" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual6.addPropertyValue(hasBiasProperty, biasIndividual3);
-			biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual6);	
-			// bias has initializer
-			RDFIndividual initializerIndividual6 = owlModel.getOWLIndividual("Zeros");
-			biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual6);
-			initializerIndividual6.addPropertyValue(isInitializerOfProperty, biasIndividual3);
-			
-			// layer 7 is dense layer
-			// model has model layer
-			RDFIndividual modelLayerIndividual7 = modelLayerClass.createOWLIndividual("modelLayer7" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual7.addPropertyValue(layerNameProperty, "layer7-dense");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual7);
-			modelLayerIndividual7.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has core layer
-			RDFIndividual coreLayerIndividual7 = coreLayerClass.createOWLIndividual("coreLayer7" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual7.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual7);
-			coreLayerIndividual7.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual7);
-			
-//			// core layer has core layer type
-//			RDFIndividual coreLayerTypeIndividual7 = coreLayerTypeClass.createOWLIndividual("coreLayerType7" + "-" + UUIDUtil.creatUUID());
-//			coreLayerIndividual7.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual7);
-//			coreLayerTypeIndividual7.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual7);
-			
-			// core layer type has layer 7
-			RDFIndividual layerIndividual7 = denseLayerClass.createOWLIndividual("layer7" + "-" + UUIDUtil.creatUUID());
-			layerIndividual7.addPropertyValue(denseOutFeaturesProperty, 100);
-			coreLayerIndividual7.addPropertyValue(hasDenseLayerProperty, layerIndividual7);
-			layerIndividual7.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual7);
-					
-			// core layer has activation function
-			RDFIndividual activationFunctionIndividual4 = owlModel.getOWLIndividual("softmax");
-			coreLayerIndividual7.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual4);
-			activationFunctionIndividual4.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual7);
-			
-			// core layer has weight
-			RDFIndividual weightIndividual4 = weightClass.createOWLIndividual("weight7" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual7.addPropertyValue(hasWeightProperty, weightIndividual4);
-			weightIndividual4.addPropertyValue(isWeightOfProperty, coreLayerIndividual7);
-			// weight has initializer
-			RDFIndividual initializerIndividual7 = owlModel.getOWLIndividual("GlorotUniform");
-			weightIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual7);
-			initializerIndividual7.addPropertyValue(isInitializerOfProperty, weightIndividual4);
-					
-			//  core layer has bias
-			RDFIndividual biasIndividual4 = biasClass.createOWLIndividual("bias7" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual7.addPropertyValue(hasBiasProperty, biasIndividual4);
-			biasIndividual4.addPropertyValue(isBiasOfProperty, coreLayerIndividual7);
-			// bias has initializer
-			RDFIndividual initializerIndividual8 = owlModel.getOWLIndividual("Zeros");
-			biasIndividual4.addPropertyValue(hasInitializerProperty, initializerIndividual8);
-			initializerIndividual8.addPropertyValue(isInitializerOfProperty, biasIndividual4);
-			
-			// layer has previous layer
-			modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
-			modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
-			modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
-			modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
-			modelLayerIndividual4.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual3);
-			modelLayerIndividual3.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual4);
-			modelLayerIndividual5.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual4);
-			modelLayerIndividual4.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual5);
-			modelLayerIndividual6.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual5);
-			modelLayerIndividual5.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual6);
-			modelLayerIndividual7.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual6);
-			modelLayerIndividual6.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual7);
-		}
-		
-		
-		// data
-		RDFIndividual dataIndividual2 = dataClass.createOWLIndividual("data" + "-" + UUIDUtil.creatUUID());
-		dataIndividual2.addPropertyValue(dataNameProperty, "Human Activity Recognition Using Smartphones Data Set");
-		dataIndividual2.addPropertyValue(dataFeatureProperty, "walking, walking_upstairs, walking_downstairs, sitting, standing, laying");
-		String dataDescription2 = "The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.\r\n" + 
-				"\r\n" + 
-				"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.\r\n";
-		dataIndividual2.addPropertyValue(dataDescriptionProperty, dataDescription2);
-		dataIndividual2.addPropertyValue(dataResourceProperty,"http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI HAR Dataset.zip");
-		// data has data type
-		RDFIndividual dataSourceTypeIndividual2 = dataSourceTypeClass.createOWLIndividual("senoryType" + "-" + UUIDUtil.creatUUID());
-		dataIndividual2.addPropertyValue (hasDataSourceTypeProperty,dataSourceTypeIndividual2);
-		dataSourceTypeIndividual2.addPropertyValue(isDataSourceTypeOfProperty, dataIndividual2);
-		// data type has accelerometer data
-		RDFIndividual accelerometerIndividual = dataSourceTypeAccelerometerClass.createOWLIndividual("accelerometer" + "-" + UUIDUtil.creatUUID());
-		accelerometerIndividual.addPropertyValue(accelerometerNameProperty, "Accelerometer");
-		dataSourceTypeIndividual2.addPropertyValue(hasAccelerometerProperty,accelerometerIndividual);
-		accelerometerIndividual.addPropertyValue(isAccelerometerOfProperty,dataSourceTypeIndividual2);
-		// data type has gyroscope data
-		RDFIndividual gyroscopeIndividual = dataSourceTypeGyroscopeClass.createOWLIndividual("gyroscope" + "-" + UUIDUtil.creatUUID());
-		gyroscopeIndividual.addPropertyValue(gyroscopeNameProperty,"Gyroscope");
-		dataSourceTypeIndividual2.addPropertyValue(hasGyroscopeProperty,gyroscopeIndividual);
-		gyroscopeIndividual.addPropertyValue(isGyroscopeOfProperty,dataSourceTypeIndividual2);
-		
-		// application
-		RDFIndividual applicationIndividual2 = applicationClass.createOWLIndividual("application" + "-" + UUIDUtil.creatUUID());
-		applicationIndividual2.addPropertyValue(applicationNameProperty, "Human Activity Recognition");
-		// RDFIndividual applicationDomainIndividual2 = applicationDomainClass.createOWLIndividual("applicationDomain"+"-"+ UUIDUtil.creatUUID());
-		// applicationIndividual2.addPropertyValue(hasApplicationDomainProperty, applicationDomainIndividual2);
-		// applicationDomainIndividual2.addPropertyValue(isApplicationDomainOfProperty, applicationIndividual2);
-		RDFIndividual applicationHealthcareIndividual2 = applicationHealthcareClass.createOWLIndividual("applicationHealthcare"+"-"+ UUIDUtil.creatUUID());
-		applicationHealthcareIndividual2.addPropertyValue(applicationHealthcareNameProperty, "Healthcare Application 2");
-		applicationIndividual2.addPropertyValue(hasHealthcareApplicationProperty, applicationHealthcareIndividual2);
-		applicationHealthcareIndividual2.addPropertyValue(isHealthcareApplicationOfProperty, applicationIndividual2);
-		RDFIndividual applicationMusculoskeletalDisorderIndividual2 = musculoskeletalDisorderClass.createOWLIndividual("applicationMusculoskeletalDisorder"+"-"+ UUIDUtil.creatUUID());
-		applicationMusculoskeletalDisorderIndividual2.addPropertyValue(musculoskeletalDisorderNameProperty, "Musculoskeletal Disorder");
-		applicationHealthcareIndividual2.addPropertyValue(hasMusculoskeletalDisorderProperty, applicationMusculoskeletalDisorderIndividual2);
-		applicationMusculoskeletalDisorderIndividual2.addPropertyValue(isMusculoskeletalDisorderOfProperty, applicationHealthcareIndividual2);
-		
-		// application has data
-		applicationIndividual2.addPropertyValue(hasDataProperty, dataIndividual2);
-		dataIndividual2.addPropertyValue(isDataOfProperty, applicationIndividual2);
-		
-		for (int i = 0; i<10;i++) {
-			// model
-			RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
-			modelIndividual.addPropertyValue(modelNameProperty, "RNN");
-			modelIndividual.addPropertyValue(modelDescriptionProperty, "TensorFlow");
-			modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model2"+ i +".json");
-			// application has many models
-			applicationIndividual2.addPropertyValue(hasModelProperty, modelIndividual);
-			modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual2);
-		
-		
-			/**
-			 *  model scope
-			 */
-			// model has performance
-			// RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-			// performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8) + new Float (i)/100);
-			// performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.7) + new Float (i)/100);
-			// performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.6) + new Float (i)/100);
-			// performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8) + new Float (i)/100);
-			// modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-			// performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			
-			if(i==0) {
+				// model
+				RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(modelNameProperty, "RNN-HAR-Keras");
+				modelIndividual.addPropertyValue(modelDescriptionProperty, "RNN trained by HAR dataset and Keras Library");
+				modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model1"+ i +".json");
+				// application has many models
+				applicationIndividual.addPropertyValue(hasModelProperty, modelIndividual);
+				modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual);
+				
+				// model has backend
+				RDFIndividual modelBackendIndividual = modelBackendClass.createOWLIndividual("modelBackend" + "-" + UUIDUtil.creatUUID());
+				modelBackendIndividual.addPropertyValue(modelBackendNameProperty, "Keras");
+				modelIndividual.addPropertyValue(hasBackendProperty, modelBackendIndividual);
+				modelBackendIndividual.addPropertyValue(isBackendOfProperty, modelIndividual);
+				// model has loss function
+				RDFIndividual modelLossFunctionIndividual = modelLossFunctionClass.createOWLIndividual("modelLossFunction" + "-" + UUIDUtil.creatUUID());
+				modelLossFunctionIndividual.addPropertyValue(modelLossFunctionNameProperty, "CrossEntropy");
+				modelIndividual.addPropertyValue(hasLossFunctionProperty, modelLossFunctionIndividual);
+				modelLossFunctionIndividual.addPropertyValue(isLossFunctionOfProperty, modelIndividual);
+				// model has optimiser
+				RDFIndividual modelOptimiserIndividual = modelOptimiserClass.createOWLIndividual("modelOptimiser" + "-" + UUIDUtil.creatUUID());
+				modelOptimiserIndividual.addPropertyValue(modelOptimiserNameProperty, "Adam");
+				modelIndividual.addPropertyValue(hasOptimiserProperty, modelOptimiserIndividual);
+				modelOptimiserIndividual.addPropertyValue(isOptimiserOfProperty, modelIndividual);
+				// model has input
+				RDFIndividual modelInputIndividual = modelInputClass.createOWLIndividual("modelInput" + "-" + UUIDUtil.creatUUID());
+				modelInputIndividual.addPropertyValue(modelInputShapeProperty, "(128,9)");
+				modelIndividual.addPropertyValue(hasInputProperty, modelInputIndividual);
+				modelInputIndividual.addPropertyValue(isInputOfProperty, modelIndividual);
+				// model has output
+				RDFIndividual modelOutputIndividual = modelOutputClass.createOWLIndividual("modelOutput" + "-" + UUIDUtil.creatUUID());
+				modelOutputIndividual.addPropertyValue(modelOutputShapeProperty, "(6)");
+				modelIndividual.addPropertyValue(hasOutputProperty, modelOutputIndividual);
+				modelOutputIndividual.addPropertyValue(isOutputOfProperty, modelIndividual);
+				
+				
 				// model has performance
 				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
 				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9019));
@@ -1226,9 +1864,158 @@ public class OntologyIndividual {
 				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9023));
 				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
 				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
+				
+				// model has model type
+				RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
+				modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
+				// model type has RNN
+				RDFIndividual modelTypeRNNIndividual = modelTypeRNNClass.createOWLIndividual("RNNType" + "-" + UUIDUtil.creatUUID());
+				modelTypeRNNIndividual.addPropertyValue(modelTypeRNNNameProperty, "RNN");
+				modelTypeIndividual.addPropertyValue(hasRNNTypeProperty, modelTypeRNNIndividual);
+				modelTypeRNNIndividual.addPropertyValue(isRNNTypeOfProperty, modelTypeIndividual);
+				
+				/**
+				 *  model layer
+				 */
+				
+				// layer 1 is recurrent layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-lstm");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
+				coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual1 = coreLayerTypeClass.createOWLIndividual("coreLayerType1" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual1.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual1);
+//				coreLayerTypeIndividual1.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual1);
+				
+				// core layer type has layer1
+				RDFIndividual layerIndividual1 = recurrentLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
+				layerIndividual1.addPropertyValue(recurrentUnitsProperty, 100);
+				coreLayerIndividual1.addPropertyValue(hasRecurrentLayerProperty, layerIndividual1);
+				layerIndividual1.addPropertyValue(isRecurrentLayerOfProperty, coreLayerIndividual1);
+				
+				// layer 2 is dropout layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual2= modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-dropout");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual2 = functionalLayerClass.createOWLIndividual("functionalLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual2);
+				functionalLayerIndividual2.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual2);
+				
+				// functional layer has dropout layer
+				RDFIndividual layerIndividual2 = dropoutLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
+				
+				layerIndividual2.addPropertyValue(dropoutRankProperty, 1);
+				layerIndividual2.addPropertyValue(dropoutRateProperty, new Float(0.5));
+				functionalLayerIndividual2.addPropertyValue(hasDropoutLayerProperty, layerIndividual2);
+				layerIndividual2.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual2);
+				
+				
+				// layer 3 is dense layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual3 = modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual3 = coreLayerClass.createOWLIndividual("coreLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual3);
+				coreLayerIndividual3.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual3);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual3 = coreLayerTypeClass.createOWLIndividual("coreLayerType3" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual3.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual3);
+//				coreLayerTypeIndividual3.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual3);
+				
+				// core layer type has layer 3
+				RDFIndividual layerIndividual3 = denseLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
+				layerIndividual3.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual3.addPropertyValue(hasDenseLayerProperty, layerIndividual3);
+				layerIndividual3.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual3);
+
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual3.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
+				activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual3);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight3" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual3.addPropertyValue(hasWeightProperty, weightIndividual3);
+				weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual3);
+				// weight has initializer
+				RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual3);
+				initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual3);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias3" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual3.addPropertyValue(hasBiasProperty, biasIndividual3);
+				biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual3);	
+				// bias has initializer
+				RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual4);
+				initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual3);
+				
+				// layer has previous layer
+				modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
+				modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
 			}
 			
-			if(i==1) {
+			if (i==4) {
+				
+				// model
+				RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(modelNameProperty, "RNN-HAR-TensorFlow");
+				modelIndividual.addPropertyValue(modelDescriptionProperty, "RNN trained by HAR dataset and TensorFlow Library");
+				modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model1"+ i +".json");
+				// application has many models
+				applicationIndividual.addPropertyValue(hasModelProperty, modelIndividual);
+				modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual);
+				
+				// model has backend
+				RDFIndividual modelBackendIndividual = modelBackendClass.createOWLIndividual("modelBackend" + "-" + UUIDUtil.creatUUID());
+				modelBackendIndividual.addPropertyValue(modelBackendNameProperty, "TensorFlow");
+				modelIndividual.addPropertyValue(hasBackendProperty, modelBackendIndividual);
+				modelBackendIndividual.addPropertyValue(isBackendOfProperty, modelIndividual);
+				// model has loss function
+				RDFIndividual modelLossFunctionIndividual = modelLossFunctionClass.createOWLIndividual("modelLossFunction" + "-" + UUIDUtil.creatUUID());
+				modelLossFunctionIndividual.addPropertyValue(modelLossFunctionNameProperty, "CrossEntropy");
+				modelIndividual.addPropertyValue(hasLossFunctionProperty, modelLossFunctionIndividual);
+				modelLossFunctionIndividual.addPropertyValue(isLossFunctionOfProperty, modelIndividual);
+				// model has optimiser
+				RDFIndividual modelOptimiserIndividual = modelOptimiserClass.createOWLIndividual("modelOptimiser" + "-" + UUIDUtil.creatUUID());
+				modelOptimiserIndividual.addPropertyValue(modelOptimiserNameProperty, "Adam");
+				modelIndividual.addPropertyValue(hasOptimiserProperty, modelOptimiserIndividual);
+				modelOptimiserIndividual.addPropertyValue(isOptimiserOfProperty, modelIndividual);
+				// model has input
+				RDFIndividual modelInputIndividual = modelInputClass.createOWLIndividual("modelInput" + "-" + UUIDUtil.creatUUID());
+				modelInputIndividual.addPropertyValue(modelInputShapeProperty, "(128,9)");
+				modelIndividual.addPropertyValue(hasInputProperty, modelInputIndividual);
+				modelInputIndividual.addPropertyValue(isInputOfProperty, modelIndividual);
+				// model has output
+				RDFIndividual modelOutputIndividual = modelOutputClass.createOWLIndividual("modelOutput" + "-" + UUIDUtil.creatUUID());
+				modelOutputIndividual.addPropertyValue(modelOutputShapeProperty, "(6)");
+				modelIndividual.addPropertyValue(hasOutputProperty, modelOutputIndividual);
+				modelOutputIndividual.addPropertyValue(isOutputOfProperty, modelIndividual);
+				
 				// model has performance
 				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
 				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8686));
@@ -1237,9 +2024,160 @@ public class OntologyIndividual {
 				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8681));
 				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
 				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
+				
+				// model has model type
+				RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
+				modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
+				// model type has RNN
+				RDFIndividual modelTypeRNNIndividual = modelTypeRNNClass.createOWLIndividual("RNNType" + "-" + UUIDUtil.creatUUID());
+				modelTypeRNNIndividual.addPropertyValue(modelTypeRNNNameProperty, "RNN");
+				modelTypeIndividual.addPropertyValue(hasRNNTypeProperty, modelTypeRNNIndividual);
+				modelTypeRNNIndividual.addPropertyValue(isRNNTypeOfProperty, modelTypeIndividual);
+				
+				
+				/**
+				 *  model layer
+				 */
+				
+				// layer 1 is recurrent layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-lstm");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
+				coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual1 = coreLayerTypeClass.createOWLIndividual("coreLayerType1" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual1.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual1);
+//				coreLayerTypeIndividual1.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual1);
+				
+				// core layer type has layer1
+				RDFIndividual layerIndividual1 = recurrentLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
+				layerIndividual1.addPropertyValue(recurrentUnitsProperty, 100);
+				coreLayerIndividual1.addPropertyValue(hasRecurrentLayerProperty, layerIndividual1);
+				layerIndividual1.addPropertyValue(isRecurrentLayerOfProperty, coreLayerIndividual1);
+				
+				// layer 2 is dropout layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual2= modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-dropout");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual2 = functionalLayerClass.createOWLIndividual("functionalLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual2);
+				functionalLayerIndividual2.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual2);
+				
+				// functional layer has dropout layer
+				RDFIndividual layerIndividual2 = dropoutLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
+				
+				layerIndividual2.addPropertyValue(dropoutRankProperty, 1);
+				layerIndividual2.addPropertyValue(dropoutRateProperty, new Float(0.5));
+				functionalLayerIndividual2.addPropertyValue(hasDropoutLayerProperty, layerIndividual2);
+				layerIndividual2.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual2);
+				
+				
+				// layer 3 is dense layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual3 = modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual3 = coreLayerClass.createOWLIndividual("coreLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual3);
+				coreLayerIndividual3.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual3);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual3 = coreLayerTypeClass.createOWLIndividual("coreLayerType3" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual3.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual3);
+//				coreLayerTypeIndividual3.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual3);
+				
+				// core layer type has layer 3
+				RDFIndividual layerIndividual3 = denseLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
+				layerIndividual3.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual3.addPropertyValue(hasDenseLayerProperty, layerIndividual3);
+				layerIndividual3.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual3);
+
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual3.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
+				activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual3);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight3" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual3.addPropertyValue(hasWeightProperty, weightIndividual3);
+				weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual3);
+				// weight has initializer
+				RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual3);
+				initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual3);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias3" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual3.addPropertyValue(hasBiasProperty, biasIndividual3);
+				biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual3);	
+				// bias has initializer
+				RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual4);
+				initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual3);
+				
+				// layer has previous layer
+				modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
+				modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
+				
 			}
 			
-			if(i==2) {
+			if (i==5) {
+				
+				// model
+				RDFIndividual modelIndividual = modelClass.createOWLIndividual("model" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(modelNameProperty, "RNN-HAR-Pytorch");
+				modelIndividual.addPropertyValue(modelDescriptionProperty, "RNN trained by HAR dataset and Pytorch Library");
+				modelIndividual.addPropertyValue(modelResourceProperty, "http://www.deep-learning-ontology.com:8080/model1"+ i +".json");
+				// application has many models
+				applicationIndividual.addPropertyValue(hasModelProperty, modelIndividual);
+				modelIndividual.addPropertyValue(isModelOfProperty, applicationIndividual);
+				
+				// model has backend
+				RDFIndividual modelBackendIndividual = modelBackendClass.createOWLIndividual("modelBackend" + "-" + UUIDUtil.creatUUID());
+				modelBackendIndividual.addPropertyValue(modelBackendNameProperty, "Pytorch");
+				modelIndividual.addPropertyValue(hasBackendProperty, modelBackendIndividual);
+				modelBackendIndividual.addPropertyValue(isBackendOfProperty, modelIndividual);
+				// model has loss function
+				RDFIndividual modelLossFunctionIndividual = modelLossFunctionClass.createOWLIndividual("modelLossFunction" + "-" + UUIDUtil.creatUUID());
+				modelLossFunctionIndividual.addPropertyValue(modelLossFunctionNameProperty, "CrossEntropy");
+				modelIndividual.addPropertyValue(hasLossFunctionProperty, modelLossFunctionIndividual);
+				modelLossFunctionIndividual.addPropertyValue(isLossFunctionOfProperty, modelIndividual);
+				// model has optimiser
+				RDFIndividual modelOptimiserIndividual = modelOptimiserClass.createOWLIndividual("modelOptimiser" + "-" + UUIDUtil.creatUUID());
+				modelOptimiserIndividual.addPropertyValue(modelOptimiserNameProperty, "Adam");
+				modelIndividual.addPropertyValue(hasOptimiserProperty, modelOptimiserIndividual);
+				modelOptimiserIndividual.addPropertyValue(isOptimiserOfProperty, modelIndividual);
+				// model has input
+				RDFIndividual modelInputIndividual = modelInputClass.createOWLIndividual("modelInput" + "-" + UUIDUtil.creatUUID());
+				modelInputIndividual.addPropertyValue(modelInputShapeProperty, "(128,9)");
+				modelIndividual.addPropertyValue(hasInputProperty, modelInputIndividual);
+				modelInputIndividual.addPropertyValue(isInputOfProperty, modelIndividual);
+				// model has output
+				RDFIndividual modelOutputIndividual = modelOutputClass.createOWLIndividual("modelOutput" + "-" + UUIDUtil.creatUUID());
+				modelOutputIndividual.addPropertyValue(modelOutputShapeProperty, "(6)");
+				modelIndividual.addPropertyValue(hasOutputProperty, modelOutputIndividual);
+				modelOutputIndividual.addPropertyValue(isOutputOfProperty, modelIndividual);
+				
 				// model has performance
 				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
 				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9077));
@@ -1248,198 +2186,123 @@ public class OntologyIndividual {
 				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9081));
 				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
 				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if(i==3) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8985));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9005));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.8998));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8982));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if(i==4) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8873));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.8899));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.8882));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8866));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if(i==5) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9066));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9096));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9093));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9085));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if(i==6) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.8408));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.8474));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.8434));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.8422));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if(i==7) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9107));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9123));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9126));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9121));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if(i==8) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9087));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9111));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9091));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9089));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			if(i==9) {
-				// model has performance
-				RDFIndividual performanceIndividual = performanceClass.createOWLIndividual("performance" + "-" + UUIDUtil.creatUUID());
-				performanceIndividual.addPropertyValue(performanceAccuracyProperty, new Float(0.9039));
-				performanceIndividual.addPropertyValue(performancePrecisionProperty, new Float(0.9047));
-				performanceIndividual.addPropertyValue(performanceRecallProperty, new Float(0.9054));
-				performanceIndividual.addPropertyValue(performanceF1ScoreProperty, new Float(0.9047));
-				modelIndividual.addPropertyValue(hasPerformanceProperty, performanceIndividual);
-				performanceIndividual.addPropertyValue(isPerformanceOfProperty, modelIndividual);
-			}
-			
-			// model has model type
-			RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
-			modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
-			modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
-			// model type has RNN
-			RDFIndividual modelTypeRNNIndividual = modelTypeRNNClass.createOWLIndividual("RNNType" + "-" + UUIDUtil.creatUUID());
-			modelTypeRNNIndividual.addPropertyValue(modelTypeRNNNameProperty, "RNN");
-			modelTypeIndividual.addPropertyValue(hasRNNTypeProperty, modelTypeRNNIndividual);
-			modelTypeRNNIndividual.addPropertyValue(isRNNTypeOfProperty, modelTypeIndividual);
-			
-			/**
-			 *  model layer
-			 */
-			
-			// layer 1 is recurrent layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-lstm");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
-			modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has core layer
-			RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
-			coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
-			
-//			// core layer has core layer type
-//			RDFIndividual coreLayerTypeIndividual1 = coreLayerTypeClass.createOWLIndividual("coreLayerType1" + "-" + UUIDUtil.creatUUID());
-//			coreLayerIndividual1.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual1);
-//			coreLayerTypeIndividual1.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual1);
-			
-			// core layer type has layer1
-			RDFIndividual layerIndividual1 = recurrentLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
-			layerIndividual1.addPropertyValue(recurrentUnitsProperty, 100);
-			coreLayerIndividual1.addPropertyValue(hasRecurrentLayerProperty, layerIndividual1);
-			layerIndividual1.addPropertyValue(isRecurrentLayerOfProperty, coreLayerIndividual1);
-			
-			// layer 2 is dropout layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual2= modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-dropout");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
-			modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has functional layer
-			RDFIndividual functionalLayerIndividual2 = functionalLayerClass.createOWLIndividual("functionalLayer2" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual2.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual2);
-			functionalLayerIndividual2.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual2);
-			
-			// functional layer has dropout layer
-			RDFIndividual layerIndividual2 = dropoutLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
-			
-			layerIndividual2.addPropertyValue(dropoutRankProperty, 1);
-			layerIndividual2.addPropertyValue(dropoutRateProperty, new Float(0.5));
-			functionalLayerIndividual2.addPropertyValue(hasDropoutLayerProperty, layerIndividual2);
-			layerIndividual2.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual2);
-			
-			
-			// layer 3 is dense layer
-			
-			// model has model layer
-			RDFIndividual modelLayerIndividual3 = modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dense");
-			modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
-			modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
-			
-			// model layer has core layer
-			RDFIndividual coreLayerIndividual3 = coreLayerClass.createOWLIndividual("coreLayer3" + "-" + UUIDUtil.creatUUID());
-			modelLayerIndividual3.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual3);
-			coreLayerIndividual3.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual3);
-			
-//			// core layer has core layer type
-//			RDFIndividual coreLayerTypeIndividual3 = coreLayerTypeClass.createOWLIndividual("coreLayerType3" + "-" + UUIDUtil.creatUUID());
-//			coreLayerIndividual3.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual3);
-//			coreLayerTypeIndividual3.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual3);
-			
-			// core layer type has layer 3
-			RDFIndividual layerIndividual3 = denseLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
-			layerIndividual3.addPropertyValue(denseOutFeaturesProperty, 100);
-			coreLayerIndividual3.addPropertyValue(hasDenseLayerProperty, layerIndividual3);
-			layerIndividual3.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual3);
+				
+				// model has model type
+				RDFIndividual modelTypeIndividual = modelTypeClass.createOWLIndividual("modelType" + "-" + UUIDUtil.creatUUID());
+				modelIndividual.addPropertyValue(hasModelTypeProperty, modelTypeIndividual);
+				modelTypeIndividual.addPropertyValue(isModelTypeOfProperty, modelIndividual);
+				// model type has RNN
+				RDFIndividual modelTypeRNNIndividual = modelTypeRNNClass.createOWLIndividual("RNNType" + "-" + UUIDUtil.creatUUID());
+				modelTypeRNNIndividual.addPropertyValue(modelTypeRNNNameProperty, "RNN");
+				modelTypeIndividual.addPropertyValue(hasRNNTypeProperty, modelTypeRNNIndividual);
+				modelTypeRNNIndividual.addPropertyValue(isRNNTypeOfProperty, modelTypeIndividual);
+				
+				
+				/**
+				 *  model layer
+				 */
+				
+				// layer 1 is recurrent layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual1 = modelLayerClass.createOWLIndividual("modelLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(layerNameProperty, "layer1-lstm");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual1 = coreLayerClass.createOWLIndividual("coreLayer1" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual1.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual1);
+				coreLayerIndividual1.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual1);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual1 = coreLayerTypeClass.createOWLIndividual("coreLayerType1" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual1.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual1);
+//				coreLayerTypeIndividual1.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual1);
+				
+				// core layer type has layer1
+				RDFIndividual layerIndividual1 = recurrentLayerClass.createOWLIndividual("layer1" + "-" + UUIDUtil.creatUUID());
+				layerIndividual1.addPropertyValue(recurrentUnitsProperty, 100);
+				coreLayerIndividual1.addPropertyValue(hasRecurrentLayerProperty, layerIndividual1);
+				layerIndividual1.addPropertyValue(isRecurrentLayerOfProperty, coreLayerIndividual1);
+				
+				// layer 2 is dropout layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual2= modelLayerClass.createOWLIndividual("modelLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(layerNameProperty, "layer2-dropout");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has functional layer
+				RDFIndividual functionalLayerIndividual2 = functionalLayerClass.createOWLIndividual("functionalLayer2" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual2.addPropertyValue(hasFunctionalLayerProperty, functionalLayerIndividual2);
+				functionalLayerIndividual2.addPropertyValue(isFunctionalLayerOfProperty, modelLayerIndividual2);
+				
+				// functional layer has dropout layer
+				RDFIndividual layerIndividual2 = dropoutLayerClass.createOWLIndividual("layer2" + "-" + UUIDUtil.creatUUID());
+				
+				layerIndividual2.addPropertyValue(dropoutRankProperty, 1);
+				layerIndividual2.addPropertyValue(dropoutRateProperty, new Float(0.5));
+				functionalLayerIndividual2.addPropertyValue(hasDropoutLayerProperty, layerIndividual2);
+				layerIndividual2.addPropertyValue(isDropoutLayerOfProperty, functionalLayerIndividual2);
+				
+				
+				// layer 3 is dense layer
+				
+				// model has model layer
+				RDFIndividual modelLayerIndividual3 = modelLayerClass.createOWLIndividual("modelLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(layerNameProperty, "layer3-dense");
+				modelIndividual.addPropertyValue(hasLayerProperty, modelLayerIndividual3);
+				modelLayerIndividual3.addPropertyValue(isLayerOfProperty, modelIndividual);
+				
+				// model layer has core layer
+				RDFIndividual coreLayerIndividual3 = coreLayerClass.createOWLIndividual("coreLayer3" + "-" + UUIDUtil.creatUUID());
+				modelLayerIndividual3.addPropertyValue(hasCoreLayerProperty, coreLayerIndividual3);
+				coreLayerIndividual3.addPropertyValue(isCoreLayerOfProperty, modelLayerIndividual3);
+				
+//				// core layer has core layer type
+//				RDFIndividual coreLayerTypeIndividual3 = coreLayerTypeClass.createOWLIndividual("coreLayerType3" + "-" + UUIDUtil.creatUUID());
+//				coreLayerIndividual3.addPropertyValue(hasCoreLayerTypeProperty, coreLayerTypeIndividual3);
+//				coreLayerTypeIndividual3.addPropertyValue(isCoreLayerTypeOfProperty, coreLayerIndividual3);
+				
+				// core layer type has layer 3
+				RDFIndividual layerIndividual3 = denseLayerClass.createOWLIndividual("layer3" + "-" + UUIDUtil.creatUUID());
+				layerIndividual3.addPropertyValue(denseOutFeaturesProperty, 100);
+				coreLayerIndividual3.addPropertyValue(hasDenseLayerProperty, layerIndividual3);
+				layerIndividual3.addPropertyValue(isDenseLayerOfProperty, coreLayerIndividual3);
 
-			// core layer has activation function
-			RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
-			coreLayerIndividual3.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
-			activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual3);
+				// core layer has activation function
+				RDFIndividual activationFunctionIndividual3 = owlModel.getOWLIndividual("relu");
+				coreLayerIndividual3.addPropertyValue(hasActivationFunctionProperty, activationFunctionIndividual3);
+				activationFunctionIndividual3.addPropertyValue(isActivationFunctionOfProperty, coreLayerIndividual3);
+				
+				// core layer has weight
+				RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight3" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual3.addPropertyValue(hasWeightProperty, weightIndividual3);
+				weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual3);
+				// weight has initializer
+				RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
+				weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual3);
+				initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual3);
+				
+				// core layer has bias
+				RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias3" + "-" + UUIDUtil.creatUUID());
+				coreLayerIndividual3.addPropertyValue(hasBiasProperty, biasIndividual3);
+				biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual3);	
+				// bias has initializer
+				RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
+				biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual4);
+				initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual3);
+				
+				// layer has previous layer
+				modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
+				modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
+				modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
+				modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
+				
+			}
 			
-			// core layer has weight
-			RDFIndividual weightIndividual3 = weightClass.createOWLIndividual("weight3" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual3.addPropertyValue(hasWeightProperty, weightIndividual3);
-			weightIndividual3.addPropertyValue(isWeightOfProperty, coreLayerIndividual3);
-			// weight has initializer
-			RDFIndividual initializerIndividual3 = owlModel.getOWLIndividual("GlorotUniform");
-			weightIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual3);
-			initializerIndividual3.addPropertyValue(isInitializerOfProperty, weightIndividual3);
-			
-			// core layer has bias
-			RDFIndividual biasIndividual3 = biasClass.createOWLIndividual("bias3" + "-" + UUIDUtil.creatUUID());
-			coreLayerIndividual3.addPropertyValue(hasBiasProperty, biasIndividual3);
-			biasIndividual3.addPropertyValue(isBiasOfProperty, coreLayerIndividual3);	
-			// bias has initializer
-			RDFIndividual initializerIndividual4 = owlModel.getOWLIndividual("Zeros");
-			biasIndividual3.addPropertyValue(hasInitializerProperty, initializerIndividual4);
-			initializerIndividual4.addPropertyValue(isInitializerOfProperty, biasIndividual3);
-			
-			// layer has previous layer
-			modelLayerIndividual2.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual1);
-			modelLayerIndividual1.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual2);
-			modelLayerIndividual3.addPropertyValue(hasPreviousLayerProperty, modelLayerIndividual2);
-			modelLayerIndividual2.addPropertyValue(isPreviousLayerOfProperty, modelLayerIndividual3);
-
 		}
 		
 		/**
