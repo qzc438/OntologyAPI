@@ -7,9 +7,9 @@ Get application area: /getApplicationArea/applicationDomain={applicationDomain}
 Get data source type: /getDataSourceType  
 Get data feature: /getDataFeature  
 Get model backend: /getModelBackend  
-Get model type: /getModelType  
-Get model loss function: /getModeLossFunction
-Get model optimiser: /getModelOptimser
+Get model type: /getModelType   
+Get model loss function: /getModeLossFunction  
+Get model optimiser: /getModelOptimser  
 Get layer type: /getLayerType  
 ### Search
 Get overview information: /getOverviewInformation  
