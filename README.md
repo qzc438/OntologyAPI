@@ -10,8 +10,8 @@ Get model backend: /getModelBackend
 Get model type: /getModelType   
 Get model loss function: /getModeLossFunction  
 Get model optimiser: /getModelOptimser  
-Get core layer type: /getCoreLayerType
-Get functional layer type: /getFunctionalLayerType
+Get core layer type: /getCoreLayerType  
+Get functional layer type: /getFunctionalLayerType  
 ### Search
 Get overview information: /getOverviewInformation  
 ### Detail
