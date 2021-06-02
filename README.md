@@ -5,8 +5,13 @@ Jersey+Jena+Tomcat, all the APIs is unber the link: Your IP Address:8080/api
 Get application domain: /getApplicationDomain  
 Get application area: /getApplicationArea/applicationDomain={applicationDomain}  
 Get data source type: /getDataSourceType  
-Get model type: /getModelType  
-Get layer type: /getLayerType  
+Get data feature: /getDataFeature  
+Get model backend: /getModelBackend  
+Get model type: /getModelType   
+Get model loss function: /getModeLossFunction  
+Get model optimiser: /getModelOptimser  
+Get core layer type: /getCoreLayerType  
+Get functional layer type: /getFunctionalLayerType  
 ### Search
 Get overview information: /getOverviewInformation  
 ### Detail
