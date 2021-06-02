@@ -33,7 +33,7 @@ import com.sun.jersey.api.Responses;
 
 @Path("filter")
 public class Filter {
-	
+
 	Dataset dataset;
 
 	StringBuffer prefix;
@@ -49,7 +49,7 @@ public class Filter {
 		prefix.append("prefix rdf: <" + RDF.getURI() + ">\n");
 		prefix.append("prefix rdfs: <" + RDFS.getURI() + ">\n");
 	}
-	
+
 	// find json result
 	public String findJsonResult(String sparql) {
 		// query
@@ -71,7 +71,6 @@ public class Filter {
 		return str;
 	}
 
-	
 	@POST
 	@Path("/getApplicationDomain")
 	@Produces("application/json")
@@ -79,23 +78,24 @@ public class Filter {
 		// sparql
 		String sparql = "SELECT ?applicationDomain WHERE {?applicationDomain rdfs:subClassOf onto:DeepLearningApplication.}";
 		// test
-		String jsonString =  findJsonResult(sparql);
+		String jsonString = findJsonResult(sparql);
 		System.out.println("getApplicationDomain:" + jsonString);
 		return jsonString;
 	}
-	
+
 	@POST
 	@Path("/getApplicationArea/applicationDomain={applicationDomain}")
 	@Produces("application/json")
 	public String getApplicationArea(@PathParam("applicationDomain") String applicationDomain) {
 		// sparql
-		String sparql = String.format("SELECT ?applicationArea WHERE {?applicationArea rdfs:subClassOf onto:%s.}", applicationDomain);
+		String sparql = String.format("SELECT ?applicationArea WHERE {?applicationArea rdfs:subClassOf onto:%s.}",
+				applicationDomain);
 		// test
-		String jsonString =  findJsonResult(sparql);
+		String jsonString = findJsonResult(sparql);
 		System.out.println("getApplicationArea:" + jsonString);
 		return jsonString;
 	}
-	
+
 	@POST
 	@Path("/getDataSourceType")
 	@Produces("application/json")
@@ -103,11 +103,42 @@ public class Filter {
 		// sparql
 		String sparql = "SELECT ?dataSourceType WHERE {?dataSourceType rdfs:subClassOf onto:DataSourceType.}";
 		// test
-		String jsonString =  findJsonResult(sparql);
+		String jsonString = findJsonResult(sparql);
 		System.out.println("getDataSourceType:" + jsonString);
 		return jsonString;
 	}
-	
+
+	@POST
+	@Path("/getDataFeature")
+	@Produces("application/json")
+	public String getDataFeature() {
+		// sparql
+		String sparql = "SELECT DISTINCT ?dataFeature\r\n" + "WHERE {\r\n"
+				+ "	?application rdf:type onto:DeepLearningApplication.\r\n"
+				+ "	?application onto:applicationName ?applicationName.\r\n"
+				+ "	?application onto:hasData ?data.\r\n" + "	?data onto:dataFeature ?dataFeature.}";
+		// test
+		String jsonString = findJsonResult(sparql);
+		System.out.println("getDataFeature:" + jsonString);
+		return jsonString;
+	}
+
+	@POST
+	@Path("/getModelBackend")
+	@Produces("application/json")
+	public String getBackend() {
+		// sparql
+		String sparql = "SELECT DISTINCT ?backendName\r\n" + "WHERE {\r\n"
+				+ "	?application rdf:type onto:DeepLearningApplication.\r\n"
+				+ "	?application onto:applicationName ?applicationName.\r\n"
+				+ "	?application onto:hasModel ?model.\r\n" + "	?model onto:hasBackend ?backend.\r\n"
+				+ "	?backend onto:backendName ?backendName.\r\n" + "}";
+		// test
+		String jsonString = findJsonResult(sparql);
+		System.out.println("getBackend:" + jsonString);
+		return jsonString;
+	}
+
 	@POST
 	@Path("/getModelType")
 	@Produces("application/json")
@@ -115,35 +146,61 @@ public class Filter {
 		// sparql
 		String sparql = "SELECT ?modelType WHERE {?modelType rdfs:subClassOf onto:ModelType.}";
 		// test
-		String jsonString =  findJsonResult(sparql);
+		String jsonString = findJsonResult(sparql);
 		System.out.println("getModelType:" + jsonString);
 		return jsonString;
 	}
-	
+
 	@POST
-	@Path("/getLayerType")
+	@Path("/getModelLossFunction")
 	@Produces("application/json")
-	public String getLayerType() {
+	public String getModelLossFunction() {
 		// sparql
-		String sparql = "SELECT ?layerType WHERE {?layerType rdfs:subClassOf onto:ModelLayer.}";
+		String sparql = "SELECT DISTINCT ?lossFunctionName\r\n" + 
+				"WHERE {\r\n" + 
+				"	?application rdf:type onto:DeepLearningApplication.\r\n" + 
+				"	?application onto:applicationName ?applicationName.\r\n" + 
+				"	?application onto:hasModel ?model.\r\n" + 
+				"	?model onto:hasLossFunction ?lossFunction.\r\n" + 
+				"	?lossFunction onto:lossFunctionName ?lossFunctionName.\r\n" + 
+				"}";
 		// test
-		String jsonString =  findJsonResult(sparql);
-		System.out.println("getLayerType:" + jsonString);
+		String jsonString = findJsonResult(sparql);
+		System.out.println("getModelLossFunction:" + jsonString);
 		return jsonString;
 	}
-	
+
+	@POST
+	@Path("/getModelOptimiser")
+	@Produces("application/json")
+	public String getModelOptimiser() {
+		// sparql
+		String sparql = "SELECT DISTINCT ?optimiserName\r\n" + 
+				"WHERE {\r\n" + 
+				"	?application rdf:type onto:DeepLearningApplication.\r\n" + 
+				"	?application onto:applicationName ?applicationName.\r\n" + 
+				"	?application onto:hasModel ?model.\r\n" + 
+				"	?model onto:hasOptimiser ?optimiser.\r\n" + 
+				"	?optimiser onto:optimiserName ?optimiserName.\r\n" + 
+				"}";
+		// test
+		String jsonString = findJsonResult(sparql);
+		System.out.println("getModelOptimiser:" + jsonString);
+		return jsonString;
+	}
+
 	@POST
 	@Path("/getCoreLayerType")
 	@Produces("application/json")
 	public String getCoreLayerType() {
 		// sparql
-		String sparql = "SELECT ?coreLayerType WHERE {?coreLayerType rdfs:subClassOf onto:CoreLayerType.}";
+		String sparql = "SELECT ?coreLayerType WHERE {?coreLayerType rdfs:subClassOf onto:CoreLayer. FILTER (?coreLayerType != onto:Bias && ?coreLayerType !=onto:Weight && ?coreLayerType !=onto:ActivationFunction)}";
 		// test
-		String jsonString =  findJsonResult(sparql);
+		String jsonString = findJsonResult(sparql);
 		System.out.println("getCoreLayerType:" + jsonString);
 		return jsonString;
 	}
-	
+
 	@POST
 	@Path("/getFunctionalLayerType")
 	@Produces("application/json")
@@ -151,11 +208,9 @@ public class Filter {
 		// sparql
 		String sparql = "SELECT ?functionalLayerType WHERE {?functionalLayerType rdfs:subClassOf onto:FunctionalLayer.}";
 		// test
-		String jsonString =  findJsonResult(sparql);
+		String jsonString = findJsonResult(sparql);
 		System.out.println("getFunctionalLayerType:" + jsonString);
 		return jsonString;
 	}
-	
+
 }
-
-

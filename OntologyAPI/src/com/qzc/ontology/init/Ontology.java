@@ -370,8 +370,8 @@ public class Ontology {
 		hasCNNTypeProperty.setDomain(modelTypeClass);
 		hasCNNTypeProperty.setRange(modelTypeCNNClass);
 		OWLObjectProperty isCNNTypeOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_CNN_TYPE_OF);
-		isCNNTypeOfProperty.setDomain(modelTypeClass);
-		isCNNTypeOfProperty.setRange(modelTypeCNNClass);
+		isCNNTypeOfProperty.setDomain(modelTypeCNNClass);
+		isCNNTypeOfProperty.setRange(modelTypeClass);
 		hasCNNTypeProperty.setInverseProperty(isCNNTypeOfProperty);
 		// has RNN type
 		OWLNamedClass modelTypeRNNClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_TYPE_RNN, modelTypeClass);
@@ -382,9 +382,20 @@ public class Ontology {
 		hasRNNTypeProperty.setDomain(modelTypeClass);
 		hasRNNTypeProperty.setRange(modelTypeRNNClass);
 		OWLObjectProperty isRNNTypeOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_RNN_TYPE_OF);
-		isRNNTypeOfProperty.setDomain(modelTypeClass);
-		isRNNTypeOfProperty.setRange(modelTypeRNNClass);
+		isRNNTypeOfProperty.setDomain(modelTypeRNNClass);
+		isRNNTypeOfProperty.setRange(modelTypeClass);
 		hasRNNTypeProperty.setInverseProperty(isRNNTypeOfProperty);
+		
+		// CNN_LSTM type, demo code
+		OWLNamedClass modelTypeCLClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_TYPE_CNN_LSTM, modelTypeClass);
+		OWLObjectProperty hasCLTypeProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_HAS_CNN_LSTM_TYPE);
+		hasCLTypeProperty.setDomain(modelTypeClass);
+		hasCLTypeProperty.setRange(modelTypeCLClass);
+		OWLObjectProperty isCLTypeOfProperty = owlModel.createOWLObjectProperty(Naming.OBJECT_PROPERTY_IS_CNN_LSTM_TYPE_OF);
+		isCLTypeOfProperty.setDomain(modelTypeCLClass);
+		isCLTypeOfProperty.setRange(modelTypeClass);
+		// Inverse property
+		hasCLTypeProperty.setInverseProperty(isCLTypeOfProperty);
 		
 		// model layer
 		OWLNamedClass modelLayerClass = owlModel.createOWLNamedSubclass(Naming.CLASS_MODEL_LAYER, modelClass);

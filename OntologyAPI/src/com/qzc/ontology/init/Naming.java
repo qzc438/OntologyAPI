@@ -170,6 +170,11 @@ public class Naming {
 	public static String OBJECT_PROPERTY_HAS_RNN_TYPE = "hasRNN";
 	public static String OBJECT_PROPERTY_IS_RNN_TYPE_OF = "isRNNOf";
 	
+	// has CNN-LSTM type
+	public static String CLASS_MODEL_TYPE_CNN_LSTM = "CNNLSTM";
+	public static String OBJECT_PROPERTY_HAS_CNN_LSTM_TYPE = "hasCNNLSTM";
+	public static String OBJECT_PROPERTY_IS_CNN_LSTM_TYPE_OF = "isCNNLSTM";
+	
 	// model layer
 	public static String CLASS_MODEL_LAYER = "ModelLayer";
 	public static String DATA_PROPERTY_MODEL_LAYER_NAME = "layerName";

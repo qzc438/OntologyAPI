@@ -789,9 +789,9 @@ public class OntologyIndividual {
 		
 		// application
 		RDFIndividual applicationIndividual = applicationClass.createOWLIndividual("application" + "-" + UUIDUtil.creatUUID());
-		applicationIndividual.addPropertyValue(applicationNameProperty, "Application 1");
+		applicationIndividual.addPropertyValue(applicationNameProperty, "Application in HAR");
 		RDFIndividual applicationHealthcareIndividual = applicationHealthcareClass.createOWLIndividual("applicationHealthcare"+"-"+ UUIDUtil.creatUUID());
-		applicationHealthcareIndividual.addPropertyValue(applicationHealthcareNameProperty, "Healthcare Application 1");
+		applicationHealthcareIndividual.addPropertyValue(applicationHealthcareNameProperty, "Healthcare Application in HAR");
 		applicationIndividual.addPropertyValue(hasHealthcareApplicationProperty, applicationHealthcareIndividual);
 		applicationHealthcareIndividual.addPropertyValue(isHealthcareApplicationOfProperty, applicationIndividual);
 		RDFIndividual applicationHARIndividual = HARClass.createOWLIndividual("applicationHAR"+"-"+ UUIDUtil.creatUUID());

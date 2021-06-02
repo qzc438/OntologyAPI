@@ -95,7 +95,7 @@ public class Search {
 				"	?modelPerformance onto:performancePrecision ?performancePrecision.\r\n" + 
 				"	?modelPerformance onto:performanceRecall ?performanceRecall.\r\n" + 
 				"	?modelPerformance onto:performanceF1Score ?performanceF1Score.\r\n" + 
-				"  	?model onto:hasLayer ?modelLayer.";
+				"  	?model onto:hasLayer ?modelLayer.\r\n";
 		// has parameterBean
 		if (parameterBean!=null) {
 			
@@ -145,6 +145,26 @@ public class Search {
 				sparql+= "  }\r\n";
 			}
 			
+			// has data feature
+			List<String> dataFeatures = parameterBean.getDataFeature();
+			if(dataFeatures!=null) {
+				sparql += "	?data onto:dataFeature ?dataFeature.\r\n";
+				for (int i = 0; i<dataFeatures.size(); i++) {
+					sparql+= "	FILTER (regex(?dataFeature, \"" + dataFeatures.get(i) + "\", \"i\"))\r\n";
+				}
+			}
+			
+			// has model backend
+			List<String> modelBackends = parameterBean.getModelBackend();
+			if(modelBackends!=null) {
+				sparql+= "  FILTER EXISTS {\r\n";
+				sparql+= "		{?model onto:hasBackend ?backend.}\r\n";
+				for (int i = 0; i<modelBackends.size(); i++) {
+					sparql+= "    {?backend onto:backendName \"" + modelBackends.get(i) +"\".}\r\n";
+				}
+				sparql+= "  }\r\n";
+			}
+			
 			// has model type
 			List<String> modelTypes = parameterBean.getModelType();
 			if(modelTypes!=null) {
@@ -158,6 +178,28 @@ public class Search {
 						sparql+= "    UNION \r\n";
 						sparql+= "    {?modelType onto:has"+ modelTypes.get(i)+" ?HARModelType.}\r\n";
 					}
+				}
+				sparql+= "  }\r\n";
+			}
+			
+			// has model loss function
+			List<String> modelLossFunctions = parameterBean.getModelLossFunction();
+			if(modelLossFunctions!=null) {
+				sparql+= "  FILTER EXISTS {\r\n";
+				sparql+= "		{?model onto:hasLossFunction ?lossFunction.}\r\n";
+				for (int i = 0; i<modelLossFunctions.size(); i++) {
+					sparql+= "    {?lossFunction onto:lossFunctionName \"" + modelLossFunctions.get(i) +"\".}\r\n";
+				}
+				sparql+= "  }\r\n";
+			}
+			
+			// has model optimiser
+			List<String> modelOptimisers = parameterBean.getModelOptimiser();
+			if(modelOptimisers!=null) {
+				sparql+= "  FILTER EXISTS {\r\n";
+				sparql+= "		{?model onto:hasOptimiser ?optimiser.}\r\n";
+				for (int i = 0; i<modelOptimisers.size(); i++) {
+					sparql+= "    {?optimiser onto:optimiserName \"" + modelOptimisers.get(i) +"\".}\r\n";
 				}
 				sparql+= "  }\r\n";
 			}
