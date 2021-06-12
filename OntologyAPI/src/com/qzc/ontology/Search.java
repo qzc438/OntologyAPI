@@ -222,6 +222,37 @@ public class Search {
 				sparql+= "  FILTER (?performanceF1Score >"+ f1score +")\r\n";
 			}
 			
+			//has core layer and functional layer
+			List<String> coreLayers = parameterBean.getCoreLayer();
+			List<String> functionalLayers = parameterBean.getFunctionalLayer();
+			if(coreLayers!=null || functionalLayers!=null) {
+				sparql+= "  FILTER EXISTS {\r\n";
+				// has core layer
+				if(coreLayers!=null) {
+					for (int i = 0; i<coreLayers.size(); i++) {
+						if(i==0)
+						{
+							sparql+= "    {?modelLayer onto:hasCoreLayer ?coreLayer. ?coreLayer onto:has"+ coreLayers.get(i)+" ?coreLayerType.}\r\n";
+						}else {
+							sparql+= "    UNION \r\n";
+							sparql+= "    {?modelLayer onto:hasCoreLayer ?coreLayer. ?coreLayer onto:has"+ coreLayers.get(i)+" ?coreLayerType.}\r\n";
+						}
+					}
+				}
+				// has functional layer
+				if(functionalLayers!=null) {
+					for (int i = 0; i<functionalLayers.size(); i++) {
+						if(i==0 && coreLayers==null)
+						{
+							sparql+= "    {?modelLayer onto:hasFunctionalLayer ?functionalLayer. ?functionalLayer onto:has"+ functionalLayers.get(i)+" ?functionalLayerType.}\r\n";
+						}else {
+							sparql+= "    UNION \r\n";
+							sparql+= "    {?modelLayer onto:hasFunctionalLayer ?functionalLayer. ?functionalLayer onto:has"+ functionalLayers.get(i)+" ?functionalLayerType.}\r\n";
+						}
+					}
+				}
+				sparql+= "  }\r\n";
+			}
 		}
 		sparql+= "}";
 		sparql+="GROUP BY \r\n" + 
@@ -229,6 +260,7 @@ public class Search {
 				"?performanceAccuracy ?performancePrecision ?performanceRecall ?performanceF1Score";
 		
 		// test
+		System.out.println("SPARQL Query:" + sparql);
 		String jsonString =  findJsonResult(sparql);
 		System.out.println("getOverview:" + jsonString);
 		return jsonString;
