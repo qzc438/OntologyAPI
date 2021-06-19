@@ -260,7 +260,7 @@ public class Search {
 				"?performanceAccuracy ?performancePrecision ?performanceRecall ?performanceF1Score";
 		
 		// test
-		System.out.println("SPARQL Query:" + sparql);
+		// System.out.println("SPARQL Query:" + sparql);
 		String jsonString =  findJsonResult(sparql);
 		System.out.println("getOverview:" + jsonString);
 		return jsonString;
