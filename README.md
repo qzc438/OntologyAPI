@@ -1,5 +1,5 @@
 # OntologyAPI
-Jersey+Jena+Tomcat, all the APIs is unber the link: Your IP Address:8080/api  
+Jersey+Jena+Tomcat, all the APIs are under the link: Your IP Address:8080/api  
 Link to: https://github.com/qzc438/MobileDLSearch  
 ## Key APIs
 ### Filter
